@@ -19,4 +19,10 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
+
+
+    func fetch() {
+        let url = URL(string: "https://content.guardianapis.com/search")!
+        URLSession.shared.dataTaskPublisher(for: url)
+    }
 }

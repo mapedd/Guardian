@@ -17,6 +17,7 @@
 		04402959270DFE89007D3C5D /* RecipeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04402958270DFE89007D3C5D /* RecipeList.swift */; };
 		0440295B270DFFD7007D3C5D /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440295A270DFFD7007D3C5D /* RecipeCell.swift */; };
 		0440295D270E107E007D3C5D /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440295C270E107E007D3C5D /* SampleData.swift */; };
+		0440295F270E19FB007D3C5D /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440295E270E19FB007D3C5D /* Network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		04402958270DFE89007D3C5D /* RecipeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeList.swift; sourceTree = "<group>"; };
 		0440295A270DFFD7007D3C5D /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		0440295C270E107E007D3C5D /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		0440295E270E19FB007D3C5D /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				04402958270DFE89007D3C5D /* RecipeList.swift */,
 				0440295C270E107E007D3C5D /* SampleData.swift */,
 				0440295A270DFFD7007D3C5D /* RecipeCell.swift */,
+				0440295E270E19FB007D3C5D /* Network.swift */,
 				04402932270DFCA3007D3C5D /* Assets.xcassets */,
 				04402934270DFCA3007D3C5D /* Preview Content */,
 			);
@@ -268,6 +271,7 @@
 			files = (
 				04402931270DFCA1007D3C5D /* ContentView.swift in Sources */,
 				04402959270DFE89007D3C5D /* RecipeList.swift in Sources */,
+				0440295F270E19FB007D3C5D /* Network.swift in Sources */,
 				0440292F270DFCA1007D3C5D /* GuardianApp.swift in Sources */,
 				0440295D270E107E007D3C5D /* SampleData.swift in Sources */,
 				0440295B270DFFD7007D3C5D /* RecipeCell.swift in Sources */,
