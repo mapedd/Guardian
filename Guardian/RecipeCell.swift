@@ -26,11 +26,13 @@ struct RecipeCell: View {
 }
 
 struct RecipeCell_Previews: PreviewProvider {
+
     static var previews: some View {
-        let item = RecipeList.Item(topTitle: "KITCHEN AIDE",
-                                   bottomCopy: "Is it OK to buy readymade pastry, or should I make it myself?",
-                                   imageName: "test0",
-                                   id: "0")
-        RecipeCell(item: item)
+        let items = SampleData().recipeListItems
+        Group {
+            RecipeCell(item: items[0])
+            RecipeCell(item: items[1])
+        }
+        .previewLayout(.sizeThatFits)
     }
 }
