@@ -10,11 +10,18 @@ import SwiftUI
 struct RecipeCell: View {
     var item: RecipeList.Item
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             Text(item.topTitle)
+                .foregroundColor(.gray)
+                .font(.caption)
             Text(item.bottomCopy)
-            item.image.resizable()
+                .font(.headline)
+            item.image
+                .resizable()
+                .cornerRadius(10)
+                .aspectRatio(3.0/2.0, contentMode: .fit)
         }
+        .padding()
     }
 }
 
