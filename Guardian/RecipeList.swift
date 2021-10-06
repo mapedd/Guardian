@@ -20,13 +20,12 @@ struct RecipeList: View {
     }
     var recipes: [Item]
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(recipes) { item in
-                    RecipeCell(item: item)
-                }
+        List {
+            ForEach(recipes) { item in
+                RecipeCell(item: item)
             }
         }
+        .listStyle(PlainListStyle())
         .navigationTitle("Recipes")
     }
 }

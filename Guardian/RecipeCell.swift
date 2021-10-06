@@ -21,7 +21,6 @@ struct RecipeCell: View {
                 .cornerRadius(10)
                 .aspectRatio(3.0/2.0, contentMode: .fit)
         }
-        .padding()
     }
 }
 
