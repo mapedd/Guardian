@@ -42,7 +42,7 @@ struct GuardianAPI {
 
         var errorDescription: String? {
             switch self {
-            case .invalidResponse: return "Cannot docode data."
+            case .invalidResponse: return "Cannot decode data."
             case .unreachable(let url): return "\(url.absoluteString) is unreachable."
             case .wrongJSONStructure: return "adjust your Decodable structure of the response"
             }

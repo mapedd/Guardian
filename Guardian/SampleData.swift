@@ -17,7 +17,7 @@ struct SampleData {
                         id: "0"),
         RecipeList.Item(topTitle: "THE SIMPLE FIX",
                         bottomCopy: "Thomasina Miers' recipe for clotted cream drizzle cake with macerated ...",
-                        imageName: "test0",
+                        imageName: "test1",
                         imageURL: nil,
                         id: "1")
     ]

@@ -30,7 +30,7 @@ struct RecipeList: View {
                        */
                       self.recipes = $0.response.results.map {
                         Item(topTitle: $0.headline ?? "",
-                             bottomCopy: $0.sectionName,
+                             bottomCopy: $0.bodyText ?? "",
                              imageName: nil,
                              imageURL: $0.thumbnail,
                              id: $0.id)

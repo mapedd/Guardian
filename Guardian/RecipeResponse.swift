@@ -14,11 +14,15 @@ struct GuardianResponse: Codable, Hashable  {
 struct RecipeResponse: Codable, Hashable {
     struct Recipe: Codable, Hashable {
         let id: String
-        let sectionName: String
+
         let fields: [String: String]
 
         var headline: String? {
             return fields["headline"]
+        }
+
+        var bodyText: String? {
+            return fields["bodyText"]
         }
 
         var thumbnail: URL? {

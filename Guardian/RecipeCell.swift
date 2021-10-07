@@ -16,29 +16,48 @@ struct RecipeCell: View {
                 .font(.caption)
             Text(item.bottomCopy)
                 .font(.headline)
+                .lineLimit(2)
 
 
-            AsyncImage(url: item.imageURL) { phase in
-                            switch phase {
-                            case .empty:
-                                ProgressView()
-                                     .frame(maxWidth: 300, maxHeight: 100)
-                            case .success(let image):
-                                image.resizable()
-                                    .cornerRadius(10)
-                                    .aspectRatio(3.0/2.0, contentMode: .fit)
-                            case .failure:
-                                Image("placeholder")
-                            @unknown default:
-                                // Since the AsyncImagePhase enum isn't frozen,
-                                // we need to add this currently unused fallback
-                                // to handle any new cases that might be added
-                                // in the future:
-                                EmptyView()
+            if item.imageURL != nil {
+                AsyncImage(url: item.imageURL) { phase in
+                                switch phase {
+                                case .empty:
+                                    ZStack {
+                                        Image("placeholder")
+                                            .resizable()
+                                            .cornerRadius(10)
+                                            .aspectRatio(3.0/2.0, contentMode: .fill)
+                                        ProgressView()
+                                    }
+                                    .opacity(0.3)
+
+
+                                case .success(let image):
+                                    image.resizable()
+                                        .cornerRadius(10)
+                                        .aspectRatio(3.0/2.0, contentMode: .fit)
+                                case .failure:
+                                    Image("placeholder")
+                                        .resizable()
+                                        .cornerRadius(10)
+                                        .aspectRatio(3.0/2.0, contentMode: .fill)
+                                @unknown default:
+                                    // Since the AsyncImagePhase enum isn't frozen,
+                                    // we need to add this currently unused fallback
+                                    // to handle any new cases that might be added
+                                    // in the future:
+                                    EmptyView()
+                                }
                             }
-                        }
+            } else if let image = item.image {
+                image.resizable()
+                    .cornerRadius(10)
+                    .aspectRatio(3.0/2.0, contentMode: .fit)
+            }
 
         }
+        .accessibility(label: Text(item.bottomCopy))
     }
 }
 
