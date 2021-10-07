@@ -33,7 +33,15 @@ enum TagToShow : String {
     case series
 }
 
-struct GuardianAPI {
+protocol URLPublisher {
+    func dataTaskPublisher(for url: URL) -> URLSession.DataTaskPublisher
+}
+
+extension URLSession: URLPublisher {
+
+}
+
+class GuardianAPI {
 
     enum Error: LocalizedError {
         case unreachable(URL)
@@ -68,9 +76,15 @@ struct GuardianAPI {
 
     private let decoder = JSONDecoder()
 
+    private let urlPublisher: URLPublisher
+
+    init(urlPublisher: URLPublisher) {
+        self.urlPublisher = urlPublisher
+    }
+
 
     func recipes() -> AnyPublisher<GuardianResponse, Error> {
-        URLSession.shared
+        urlPublisher
             .dataTaskPublisher(for: Self.EndPoint.recipes.url)
             .receive(on: apiQueue)
             .map(\.data)

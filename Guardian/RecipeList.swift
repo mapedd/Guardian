@@ -13,7 +13,11 @@ struct RecipeList: View {
     class ViewModel: ObservableObject {
         @Published var recipes = [Item]()
 
-        let api = GuardianAPI()
+        init(publisher: URLPublisher) {
+            self.api = GuardianAPI(urlPublisher: publisher)
+        }
+
+        let api: GuardianAPI
         var error : GuardianAPI.Error? = nil
         var subscriptions = [AnyCancellable]()
 

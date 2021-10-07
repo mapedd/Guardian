@@ -9,9 +9,10 @@ import SwiftUI
 import Combine
 
 struct ContentView: View {
+    let viewModel = RecipeList.ViewModel(publisher: URLSession.shared)
     var body: some View {
         NavigationView {
-            RecipeList(model: RecipeList.ViewModel())
+            RecipeList(model: viewModel)
         }
     }
 }

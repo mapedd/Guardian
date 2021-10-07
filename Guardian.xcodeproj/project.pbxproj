@@ -19,6 +19,8 @@
 		0440295D270E107E007D3C5D /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440295C270E107E007D3C5D /* SampleData.swift */; };
 		0440295F270E19FB007D3C5D /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440295E270E19FB007D3C5D /* Network.swift */; };
 		04402967270F56BA007D3C5D /* RecipeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04402966270F56B9007D3C5D /* RecipeResponse.swift */; };
+		04402969270F7CB9007D3C5D /* UITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04402968270F7CB9007D3C5D /* UITestCase.swift */; };
+		0440296B270F7D7B007D3C5D /* RecipeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440296A270F7D7B007D3C5D /* RecipeDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		0440295C270E107E007D3C5D /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		0440295E270E19FB007D3C5D /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		04402966270F56B9007D3C5D /* RecipeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeResponse.swift; sourceTree = "<group>"; };
+		04402968270F7CB9007D3C5D /* UITestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestCase.swift; sourceTree = "<group>"; };
+		0440296A270F7D7B007D3C5D /* RecipeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 				0440292E270DFCA1007D3C5D /* GuardianApp.swift */,
 				04402930270DFCA1007D3C5D /* ContentView.swift */,
 				04402958270DFE89007D3C5D /* RecipeList.swift */,
+				0440296A270F7D7B007D3C5D /* RecipeDetail.swift */,
 				0440295C270E107E007D3C5D /* SampleData.swift */,
 				0440295A270DFFD7007D3C5D /* RecipeCell.swift */,
 				0440295E270E19FB007D3C5D /* Network.swift */,
@@ -136,6 +141,7 @@
 		04402948270DFCA3007D3C5D /* GuardianUITests */ = {
 			isa = PBXGroup;
 			children = (
+				04402968270F7CB9007D3C5D /* UITestCase.swift */,
 				04402949270DFCA3007D3C5D /* GuardianUITests.swift */,
 				0440294B270DFCA3007D3C5D /* GuardianUITestsLaunchTests.swift */,
 			);
@@ -272,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0440296B270F7D7B007D3C5D /* RecipeDetail.swift in Sources */,
 				04402931270DFCA1007D3C5D /* ContentView.swift in Sources */,
 				04402959270DFE89007D3C5D /* RecipeList.swift in Sources */,
 				0440295F270E19FB007D3C5D /* Network.swift in Sources */,
@@ -296,6 +303,7 @@
 			files = (
 				0440294C270DFCA3007D3C5D /* GuardianUITestsLaunchTests.swift in Sources */,
 				0440294A270DFCA3007D3C5D /* GuardianUITests.swift in Sources */,
+				04402969270F7CB9007D3C5D /* UITestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
