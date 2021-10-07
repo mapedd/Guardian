@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ContentView: View {
     var body: some View {
         NavigationView {
-            RecipeList(recipes: SampleData().recipeListItems)
+            RecipeList(model: RecipeList.ViewModel())
         }
     }
 }
@@ -20,9 +21,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 
-
-    func fetch() {
-        let url = URL(string: "https://content.guardianapis.com/search")!
-        URLSession.shared.dataTaskPublisher(for: url)
-    }
 }
