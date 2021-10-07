@@ -21,9 +21,16 @@ struct RecipeResponse: Codable, Hashable {
             return fields["headline"]
         }
 
-        var shortURL: String? {
-            return fields["shortUrl"]
+        var thumbnail: URL? {
+            guard let thumbnailString = fields["thumbnail"],
+                  let thumbnailURL = URL(string: thumbnailString) else {
+                      return nil
+                  }
+
+            return thumbnailURL
         }
+
+
     }
 
     let results: [Recipe]

@@ -50,7 +50,7 @@ struct GuardianAPI {
     }
 
     enum EndPoint {
-        static let baseURL = URL(string: "https://content.guardianapis.com/search?format=json&tag=tone%2Frecipes&from-date=2010-01-01&show-tags=contributor&show-fields=starRating,headline,thumbnail,short-url&order-by=relevance&api-key=b3437fe8-33dd-4b67-a90b-e2bdb634fcb3")!
+        static let baseURL = URL(string: "https://content.guardianapis.com/search?tag=tone%2Frecipes&from-date=2010-01-01&show-tags=contributor&show-fields=all&api-key=b3437fe8-33dd-4b67-a90b-e2bdb634fcb3")!
 
         case recipes
 

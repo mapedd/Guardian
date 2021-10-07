@@ -13,10 +13,12 @@ struct SampleData {
         RecipeList.Item(topTitle: "KITCHEN AIDE",
                         bottomCopy: "Is it OK to buy readymade pastry, or should I make it myself?",
                         imageName: "test0",
+                        imageURL: nil,
                         id: "0"),
         RecipeList.Item(topTitle: "THE SIMPLE FIX",
                         bottomCopy: "Thomasina Miers' recipe for clotted cream drizzle cake with macerated ...",
-                        imageName: "test1",
+                        imageName: "test0",
+                        imageURL: nil,
                         id: "1")
     ]
 }

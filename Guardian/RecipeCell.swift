@@ -16,10 +16,28 @@ struct RecipeCell: View {
                 .font(.caption)
             Text(item.bottomCopy)
                 .font(.headline)
-            item.image
-                .resizable()
-                .cornerRadius(10)
-                .aspectRatio(3.0/2.0, contentMode: .fit)
+
+
+            AsyncImage(url: item.imageURL) { phase in
+                            switch phase {
+                            case .empty:
+                                ProgressView()
+                                     .frame(maxWidth: 300, maxHeight: 100)
+                            case .success(let image):
+                                image.resizable()
+                                    .cornerRadius(10)
+                                    .aspectRatio(3.0/2.0, contentMode: .fit)
+                            case .failure:
+                                Image("placeholder")
+                            @unknown default:
+                                // Since the AsyncImagePhase enum isn't frozen,
+                                // we need to add this currently unused fallback
+                                // to handle any new cases that might be added
+                                // in the future:
+                                EmptyView()
+                            }
+                        }
+
         }
     }
 }

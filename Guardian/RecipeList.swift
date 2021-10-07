@@ -19,6 +19,7 @@ struct RecipeList: View {
 
         func fetch() {
             api.recipes()
+                .receive(on: DispatchQueue.main)
                 .sink(receiveCompletion: { completion in
                     if case .failure(let error) = completion {
                       self.error = error
@@ -30,7 +31,8 @@ struct RecipeList: View {
                       self.recipes = $0.response.results.map {
                         Item(topTitle: $0.headline ?? "",
                              bottomCopy: $0.sectionName,
-                             imageName: "test0",
+                             imageName: nil,
+                             imageURL: $0.thumbnail,
                              id: $0.id)
                     }
                      })
@@ -41,11 +43,16 @@ struct RecipeList: View {
     struct Item: Hashable, Identifiable {
         let topTitle: String
         let bottomCopy: String
-        let imageName: String
+        let imageName: String?
+        let imageURL: URL?
         let id: String
 
-        var image: Image {
-            Image(imageName)
+        var image: Image? {
+            if let imageName = imageName {
+                return Image(imageName)
+            } else {
+                return nil
+            }
         }
     }
 
