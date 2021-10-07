@@ -14,12 +14,26 @@ struct RecipeList: View {
         @Published var recipes = [Item]()
 
         let api = GuardianAPI()
+        var error : GuardianAPI.Error? = nil
         var subscriptions = [AnyCancellable]()
 
         func fetch() {
             api.recipes()
-                .sink(receiveCompletion: { print($0) },
-                      receiveValue: { print($0) })
+                .sink(receiveCompletion: { completion in
+                    if case .failure(let error) = completion {
+                      self.error = error
+                    }
+                  }, receiveValue: {
+                      /*
+                       Publishing changes from background threads is not allowed; make sure to publish values from the main thread (via operators like receive(on:)) on model updates.
+                       */
+                      self.recipes = $0.response.results.map {
+                        Item(topTitle: $0.headline ?? "",
+                             bottomCopy: $0.sectionName,
+                             imageName: "test0",
+                             id: $0.id)
+                    }
+                     })
                 .store(in: &subscriptions)
         }
     }

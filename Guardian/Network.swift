@@ -38,24 +38,26 @@ struct GuardianAPI {
     enum Error: LocalizedError {
         case unreachable(URL)
         case invalidResponse
+        case wrongJSONStructure
 
         var errorDescription: String? {
             switch self {
             case .invalidResponse: return "Cannot docode data."
             case .unreachable(let url): return "\(url.absoluteString) is unreachable."
+            case .wrongJSONStructure: return "adjust your Decodable structure of the response"
             }
         }
     }
 
     enum EndPoint {
-        static let baseURL = URL(string: "https://content.guardianapis.com/search")!
+        static let baseURL = URL(string: "https://content.guardianapis.com/search?format=json&tag=tone%2Frecipes&from-date=2010-01-01&show-tags=contributor&show-fields=starRating,headline,thumbnail,short-url&order-by=relevance&api-key=b3437fe8-33dd-4b67-a90b-e2bdb634fcb3")!
 
         case recipes
 
         var url: URL {
             switch self {
             case .recipes:
-                return EndPoint.baseURL.appendingPathComponent("newstories.json")
+                return EndPoint.baseURL
             }
         }
     }
@@ -67,13 +69,28 @@ struct GuardianAPI {
     private let decoder = JSONDecoder()
 
 
-    func recipes() -> AnyPublisher<RecipeResponse, Error> {
+    func recipes() -> AnyPublisher<GuardianResponse, Error> {
         URLSession.shared
             .dataTaskPublisher(for: Self.EndPoint.recipes.url)
             .receive(on: apiQueue)
             .map(\.data)
-            .decode(type: RecipeResponse.self, decoder: decoder)
-            .catch { _ in Empty<RecipeResponse, Error>() }
+            .print()
+            .handleEvents(receiveSubscription: {_ in },
+                          receiveOutput: { data in
+                print(String(data: data, encoding: .utf8))
+            }, receiveCompletion: { _ in },
+                          receiveCancel: {},
+                          receiveRequest: {_ in })
+            .decode(type: GuardianResponse.self, decoder: decoder)
+            .mapError { error in
+                switch error {
+                case is URLError:
+                    return Error.unreachable(EndPoint.recipes.url)
+                case is DecodingError:
+                    return Error.wrongJSONStructure
+                default: return Error.invalidResponse
+                }
+            }
             .eraseToAnyPublisher()
     }
 

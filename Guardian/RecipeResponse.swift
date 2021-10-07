@@ -7,8 +7,12 @@
 
 import Foundation
 
-struct RecipeResponse: Decodable, Hashable {
-    struct Recipe: Decodable, Hashable {
+struct GuardianResponse: Codable, Hashable  {
+    var response: RecipeResponse
+}
+
+struct RecipeResponse: Codable, Hashable {
+    struct Recipe: Codable, Hashable {
         let id: String
         let sectionName: String
         let fields: [String: String]
