@@ -19,4 +19,14 @@ class GuardianAPITests: XCTestCase {
         let expected = GuardianResponse(response: RecipeResponse(results: []))
         XCTAssertEqual(recipes, expected)
     }
+
+    func testAPICallsCorrectURL() throws {
+        let apiProvider = MockAPIProvider()
+        let api = GuardianAPI(apiProvider: apiProvider)
+        let _ = try wait(for:api.recipes())
+        XCTAssertCount(apiProvider.urlsInserted, 1)
+        let url = try XCTUnwrap(apiProvider.urlsInserted.first)
+        XCTAssertContains(url.absoluteString, "https://content.guardianapis.com/search")
+    }
 }
+

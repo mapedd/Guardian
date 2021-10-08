@@ -24,6 +24,7 @@
 		0440296D270F8302007D3C5D /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440296C270F8302007D3C5D /* Mocks.swift */; };
 		0440296F2710500F007D3C5D /* sampleEmpty.json in Resources */ = {isa = PBXBuildFile; fileRef = 0440296E2710500F007D3C5D /* sampleEmpty.json */; };
 		044029712710525E007D3C5D /* XCTestCase+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044029702710525E007D3C5D /* XCTestCase+Combine.swift */; };
+		044029732710702E007D3C5D /* XCTestCase+Matchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044029722710702E007D3C5D /* XCTestCase+Matchers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		0440296C270F8302007D3C5D /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		0440296E2710500F007D3C5D /* sampleEmpty.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sampleEmpty.json; sourceTree = "<group>"; };
 		044029702710525E007D3C5D /* XCTestCase+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Combine.swift"; sourceTree = "<group>"; };
+		044029722710702E007D3C5D /* XCTestCase+Matchers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Matchers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				0440296E2710500F007D3C5D /* sampleEmpty.json */,
 				0440293F270DFCA3007D3C5D /* GuardianAPITests.swift */,
 				044029702710525E007D3C5D /* XCTestCase+Combine.swift */,
+				044029722710702E007D3C5D /* XCTestCase+Matchers.swift */,
 				0440296C270F8302007D3C5D /* Mocks.swift */,
 			);
 			path = GuardianTests;
@@ -304,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04402940270DFCA3007D3C5D /* GuardianAPITests.swift in Sources */,
+				044029732710702E007D3C5D /* XCTestCase+Matchers.swift in Sources */,
 				0440296D270F8302007D3C5D /* Mocks.swift in Sources */,
 				044029712710525E007D3C5D /* XCTestCase+Combine.swift in Sources */,
 			);

@@ -9,7 +9,7 @@ import Foundation
 import Combine
 @testable import Guardian
 
-struct MockAPIProvider: APIProvider {
+class MockAPIProvider: APIProvider {
     class Foo {
 
     }
@@ -27,7 +27,10 @@ struct MockAPIProvider: APIProvider {
     let bundle = Bundle(for: Foo.self)
 
     var resultToReturn: Result<Data, URLError>?
+    var urlsInserted = [URL]()
     func apiResponse(for url: URL) -> AnyPublisher<APIResponse, URLError> {
+
+        urlsInserted.append(url)
 
         if let resultToReturn = resultToReturn {
             switch resultToReturn {
