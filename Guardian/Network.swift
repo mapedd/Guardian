@@ -33,16 +33,7 @@ enum TagToShow : String {
     case series
 }
 
-protocol APIProvider {
-    typealias APIResponse = URLSession.DataTaskPublisher.Output
-    func apiResponse(for url: URL) -> AnyPublisher<APIResponse, URLError>
-}
 
-extension URLSession: APIProvider {
-    func apiResponse(for url: URL) -> AnyPublisher<APIResponse, URLError> {
-        return dataTaskPublisher(for: url).eraseToAnyPublisher()
-    }
-}
 class GuardianAPI {
 
     enum Error: LocalizedError {
