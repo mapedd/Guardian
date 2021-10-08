@@ -11,7 +11,7 @@
 		04402931270DFCA1007D3C5D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04402930270DFCA1007D3C5D /* ContentView.swift */; };
 		04402933270DFCA3007D3C5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04402932270DFCA3007D3C5D /* Assets.xcassets */; };
 		04402936270DFCA3007D3C5D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04402935270DFCA3007D3C5D /* Preview Assets.xcassets */; };
-		04402940270DFCA3007D3C5D /* GuardianTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440293F270DFCA3007D3C5D /* GuardianTests.swift */; };
+		04402940270DFCA3007D3C5D /* GuardianAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440293F270DFCA3007D3C5D /* GuardianAPITests.swift */; };
 		0440294A270DFCA3007D3C5D /* GuardianUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04402949270DFCA3007D3C5D /* GuardianUITests.swift */; };
 		0440294C270DFCA3007D3C5D /* GuardianUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440294B270DFCA3007D3C5D /* GuardianUITestsLaunchTests.swift */; };
 		04402959270DFE89007D3C5D /* RecipeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04402958270DFE89007D3C5D /* RecipeList.swift */; };
@@ -21,6 +21,9 @@
 		04402967270F56BA007D3C5D /* RecipeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04402966270F56B9007D3C5D /* RecipeResponse.swift */; };
 		04402969270F7CB9007D3C5D /* UITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04402968270F7CB9007D3C5D /* UITestCase.swift */; };
 		0440296B270F7D7B007D3C5D /* RecipeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440296A270F7D7B007D3C5D /* RecipeDetail.swift */; };
+		0440296D270F8302007D3C5D /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440296C270F8302007D3C5D /* Mocks.swift */; };
+		0440296F2710500F007D3C5D /* sampleEmpty.json in Resources */ = {isa = PBXBuildFile; fileRef = 0440296E2710500F007D3C5D /* sampleEmpty.json */; };
+		044029712710525E007D3C5D /* XCTestCase+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044029702710525E007D3C5D /* XCTestCase+Combine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +50,7 @@
 		04402932270DFCA3007D3C5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04402935270DFCA3007D3C5D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0440293B270DFCA3007D3C5D /* GuardianTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuardianTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0440293F270DFCA3007D3C5D /* GuardianTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardianTests.swift; sourceTree = "<group>"; };
+		0440293F270DFCA3007D3C5D /* GuardianAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardianAPITests.swift; sourceTree = "<group>"; };
 		04402945270DFCA3007D3C5D /* GuardianUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuardianUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04402949270DFCA3007D3C5D /* GuardianUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardianUITests.swift; sourceTree = "<group>"; };
 		0440294B270DFCA3007D3C5D /* GuardianUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardianUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -58,6 +61,9 @@
 		04402966270F56B9007D3C5D /* RecipeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeResponse.swift; sourceTree = "<group>"; };
 		04402968270F7CB9007D3C5D /* UITestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestCase.swift; sourceTree = "<group>"; };
 		0440296A270F7D7B007D3C5D /* RecipeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetail.swift; sourceTree = "<group>"; };
+		0440296C270F8302007D3C5D /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
+		0440296E2710500F007D3C5D /* sampleEmpty.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sampleEmpty.json; sourceTree = "<group>"; };
+		044029702710525E007D3C5D /* XCTestCase+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Combine.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +139,10 @@
 		0440293E270DFCA3007D3C5D /* GuardianTests */ = {
 			isa = PBXGroup;
 			children = (
-				0440293F270DFCA3007D3C5D /* GuardianTests.swift */,
+				0440296E2710500F007D3C5D /* sampleEmpty.json */,
+				0440293F270DFCA3007D3C5D /* GuardianAPITests.swift */,
+				044029702710525E007D3C5D /* XCTestCase+Combine.swift */,
+				0440296C270F8302007D3C5D /* Mocks.swift */,
 			);
 			path = GuardianTests;
 			sourceTree = "<group>";
@@ -261,6 +270,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0440296F2710500F007D3C5D /* sampleEmpty.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +303,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04402940270DFCA3007D3C5D /* GuardianTests.swift in Sources */,
+				04402940270DFCA3007D3C5D /* GuardianAPITests.swift in Sources */,
+				0440296D270F8302007D3C5D /* Mocks.swift in Sources */,
+				044029712710525E007D3C5D /* XCTestCase+Combine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

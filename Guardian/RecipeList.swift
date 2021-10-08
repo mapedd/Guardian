@@ -13,8 +13,8 @@ struct RecipeList: View {
     class ViewModel: ObservableObject {
         @Published var recipes = [Item]()
 
-        init(publisher: URLPublisher) {
-            self.api = GuardianAPI(urlPublisher: publisher)
+        init(apiProvider: APIProvider) {
+            self.api = GuardianAPI(apiProvider: apiProvider)
         }
 
         let api: GuardianAPI
@@ -71,6 +71,9 @@ struct RecipeList: View {
             ForEach(self.model.recipes) { item in
                 RecipeCell(item: item)
             }
+        }
+        .refreshable {
+            self.model.fetch()
         }
         .listStyle(PlainListStyle())
         .navigationTitle("Recipes")

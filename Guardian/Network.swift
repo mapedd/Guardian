@@ -6,8 +6,8 @@
 //
 
 import Foundation
-
 import Combine
+
 
 //- tag - tone/recipes
 //- show-tags - series
@@ -33,14 +33,16 @@ enum TagToShow : String {
     case series
 }
 
-protocol URLPublisher {
-    func dataTaskPublisher(for url: URL) -> URLSession.DataTaskPublisher
+protocol APIProvider {
+    typealias APIResponse = URLSession.DataTaskPublisher.Output
+    func apiResponse(for url: URL) -> AnyPublisher<APIResponse, URLError>
 }
 
-extension URLSession: URLPublisher {
-
+extension URLSession: APIProvider {
+    func apiResponse(for url: URL) -> AnyPublisher<APIResponse, URLError> {
+        return dataTaskPublisher(for: url).eraseToAnyPublisher()
+    }
 }
-
 class GuardianAPI {
 
     enum Error: LocalizedError {
@@ -76,16 +78,16 @@ class GuardianAPI {
 
     private let decoder = JSONDecoder()
 
-    private let urlPublisher: URLPublisher
+    private let apiProvider: APIProvider
 
-    init(urlPublisher: URLPublisher) {
-        self.urlPublisher = urlPublisher
+    init(apiProvider: APIProvider) {
+        self.apiProvider = apiProvider
     }
 
 
     func recipes() -> AnyPublisher<GuardianResponse, Error> {
-        urlPublisher
-            .dataTaskPublisher(for: Self.EndPoint.recipes.url)
+        apiProvider
+            .apiResponse(for: Self.EndPoint.recipes.url)
             .receive(on: apiQueue)
             .map(\.data)
             .print()
