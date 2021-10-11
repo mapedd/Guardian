@@ -64,7 +64,7 @@ struct RecipeCell: View {
 struct RecipeCell_Previews: PreviewProvider {
 
     static var previews: some View {
-        let items = SampleData().recipeListItems
+        let items = SampleRecipeList().recipeListItems
         Group {
             RecipeCell(item: items[0])
             RecipeCell(item: items[1])

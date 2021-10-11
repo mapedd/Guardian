@@ -7,9 +7,13 @@
 
 import Foundation
 import Combine
-@testable import Guardian
 
-class MockAPIProvider: APIProvider {
+public class MockAPIProvider: APIProvider {
+    
+    public init() {
+        
+    }
+    
     class Foo {
 
     }
@@ -26,9 +30,10 @@ class MockAPIProvider: APIProvider {
 
     let bundle = Bundle(for: Foo.self)
 
-    var resultToReturn: Result<Data, URLError>?
-    var urlsInserted = [URL]()
-    func apiResponse(for url: URL) -> AnyPublisher<APIResponse, URLError> {
+    public var resultToReturn: Result<Data, URLError>?
+    public var urlsInserted = [URL]()
+    
+    public func apiResponse(for url: URL) -> AnyPublisher<APIResponse, URLError> {
 
         urlsInserted.append(url)
 

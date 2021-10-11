@@ -7,7 +7,7 @@
 
 import SwiftUI
 import Combine
-import GuardianTests
+import GuardianBackend
 
 struct RecipeList: View {
     @ObservedObject var model: ViewModel
@@ -38,7 +38,8 @@ struct RecipeList: View {
 
 struct RecipeList_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel = RecipeList.ViewModel(apiProvider: MockAPIProvider())
+        let apiProvider = MockAPIProvider()
+        let viewModel = RecipeList.ViewModel(apiProvider: apiProvider)
         RecipeList(model: viewModel)
     }
 }

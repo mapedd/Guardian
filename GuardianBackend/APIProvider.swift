@@ -8,13 +8,13 @@
 import Foundation
 import Combine
 
-protocol APIProvider {
+public protocol APIProvider {
     typealias APIResponse = URLSession.DataTaskPublisher.Output
     func apiResponse(for url: URL) -> AnyPublisher<APIResponse, URLError>
 }
 
 extension URLSession: APIProvider {
-    func apiResponse(for url: URL) -> AnyPublisher<APIResponse, URLError> {
+    public func apiResponse(for url: URL) -> AnyPublisher<APIResponse, URLError> {
         return dataTaskPublisher(for: url).eraseToAnyPublisher()
     }
 }

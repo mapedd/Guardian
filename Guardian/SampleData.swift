@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct SampleData {
+struct SampleRecipeList {
     var recipeListItems = [
         RecipeList.Item(topTitle: "KITCHEN AIDE",
                         bottomCopy: "Is it OK to buy readymade pastry, or should I make it myself?",

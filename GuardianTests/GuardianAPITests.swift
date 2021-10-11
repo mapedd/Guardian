@@ -8,6 +8,7 @@
 import XCTest
 @testable import Guardian
 import Combine
+import GuardianBackend
 
 
 class GuardianAPITests: XCTestCase {

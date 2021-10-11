@@ -34,14 +34,14 @@ enum TagToShow : String {
 }
 
 
-class GuardianAPI {
+public class GuardianAPI {
 
-    enum Error: LocalizedError {
+    public enum Error: LocalizedError {
         case unreachable(URL)
         case invalidResponse
         case wrongJSONStructure
 
-        var errorDescription: String? {
+        public var errorDescription: String? {
             switch self {
             case .invalidResponse: return "Cannot decode data."
             case .unreachable(let url): return "\(url.absoluteString) is unreachable."
@@ -50,7 +50,7 @@ class GuardianAPI {
         }
     }
 
-    enum EndPoint {
+    public enum EndPoint {
         static let baseURL = URL(string: "https://content.guardianapis.com/search?tag=tone%2Frecipes&from-date=2010-01-01&show-tags=contributor&show-fields=all&api-key=b3437fe8-33dd-4b67-a90b-e2bdb634fcb3")!
 
         case recipes
@@ -71,12 +71,12 @@ class GuardianAPI {
 
     private let apiProvider: APIProvider
 
-    init(apiProvider: APIProvider) {
+    public init(apiProvider: APIProvider) {
         self.apiProvider = apiProvider
     }
 
 
-    func recipes() -> AnyPublisher<GuardianResponse, Error> {
+    public func recipes() -> AnyPublisher<GuardianResponse, Error> {
         apiProvider
             .apiResponse(for: Self.EndPoint.recipes.url)
             .receive(on: apiQueue)
