@@ -8,14 +8,29 @@
 import Foundation
 import SwiftUI
 
+struct Author: Hashable {
+    var name: Name
+    var pictureURL: URL?
+}
+
+
+struct Name: Hashable {
+    let first: String?
+    let last: String?
+}
+
+
 extension RecipeList {
     struct Item: Hashable, Identifiable {
+
+
         let topTitle: String
         let bottomCopy: String
         let imageName: String?
         let imageURL: URL?
         let id: String
         let bodyHTML: String
+        let author: Author
 
         var image: Image? {
             if let imageName = imageName {
@@ -26,7 +41,7 @@ extension RecipeList {
         }
 
         var asDetailItem: RecipeDetail.Item {
-            RecipeDetail.Item(author: Name(first: "Thomas", last: "Kuzma"),// here hardcoded
+            RecipeDetail.Item(author: author,
                               title: topTitle,
                               body: bodyHTML,
                               image: nil,

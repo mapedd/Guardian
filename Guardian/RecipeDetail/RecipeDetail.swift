@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-struct Name {
-    let first: String
-    let last: String
-}
-
 struct RecipeDetail: View {
 
     var item: RecipeDetail.Item
@@ -24,7 +19,7 @@ struct RecipeDetail: View {
             AsyncImageWithPlaceholder(placeholderImageName: "placeholder",
                                       imageURL: item.imageURL,
                                       staticImage: item.image)
-                .overlay(TextOverlay(line0: item.author.first, line1: item.author.last))
+                .overlay(TextOverlay(line0: item.author.name.first ?? "", line1: item.author.name.last ?? ""))
             
 
             VStack(alignment: .leading) {
@@ -46,7 +41,9 @@ struct RecipeDetail: View {
 
 struct RecipeDetail_Previews: PreviewProvider {
     static var previews: some View {
-        let item = RecipeDetail.Item(author: Name(first: "Thomas", last: "Brody"),
+        let name = Name(first: "Thomas", last: "Brody")
+        let author = Author(name: name, pictureURL: nil)
+        let item = RecipeDetail.Item(author: author,
                                      title: "Kimchi & Friends",
                                      body: "Interesting recipe",
                                      image: Image("test0"),

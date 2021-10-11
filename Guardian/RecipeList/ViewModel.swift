@@ -18,13 +18,13 @@ extension RecipeList {
         @Published var loading : Bool = false
         
         var showError: Binding<Bool> {
-                return Binding<Bool>(get: {
-                    return self.error != nil
-                }, set: { newValue in
-                    guard !newValue else { return }
-                    self.error = nil
-                })
-            }
+            return Binding<Bool>(get: {
+                return self.error != nil
+            }, set: { newValue in
+                guard !newValue else { return }
+                self.error = nil
+            })
+        }
 
         init(apiProvider: APIProvider) {
             self.api = GuardianAPI(apiProvider: apiProvider)
@@ -57,12 +57,15 @@ extension RecipeList {
 extension GuardianResponse {
     var asListItems : [RecipeList.Item] {
         return response.results.map {
-           return RecipeList.Item(topTitle: $0.headline ?? "",
-                 bottomCopy: $0.bodyText ?? "",
-                 imageName: nil,
-                 imageURL: $0.thumbnail,
-                 id: $0.id,
-                 bodyHTML: $0.body ?? "")
+            let name = Name(first: $0.authorFirstName, last: $0.authorLastName)
+            let author = Author(name: name, pictureURL: $0.authPicURL)
+            return RecipeList.Item(topTitle: $0.headline ?? "",
+                                   bottomCopy: $0.bodyText ?? "",
+                                   imageName: nil,
+                                   imageURL: $0.thumbnail,
+                                   id: $0.id,
+                                   bodyHTML: $0.body ?? "",
+                                   author: author)
         }
     }
 }
