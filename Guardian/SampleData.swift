@@ -14,11 +14,13 @@ struct SampleData {
                         bottomCopy: "Is it OK to buy readymade pastry, or should I make it myself?",
                         imageName: "test0",
                         imageURL: nil,
-                        id: "0"),
+                        id: "0",
+                        bodyHTML: ""),
         RecipeList.Item(topTitle: "THE SIMPLE FIX",
                         bottomCopy: "Thomasina Miers' recipe for clotted cream drizzle cake with macerated ...",
                         imageName: "test1",
                         imageURL: nil,
-                        id: "1")
+                        id: "1",
+                        bodyHTML: "")
     ]
 }

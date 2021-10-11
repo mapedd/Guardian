@@ -26,20 +26,21 @@ struct RecipeList: View {
                 .receive(on: DispatchQueue.main)
                 .sink(receiveCompletion: { completion in
                     if case .failure(let error) = completion {
-                      self.error = error
+                        self.error = error
                     }
-                  }, receiveValue: {
-                      /*
-                       Publishing changes from background threads is not allowed; make sure to publish values from the main thread (via operators like receive(on:)) on model updates.
-                       */
-                      self.recipes = $0.response.results.map {
+                }, receiveValue: {
+                    /*
+                     Publishing changes from background threads is not allowed; make sure to publish values from the main thread (via operators like receive(on:)) on model updates.
+                     */
+                    self.recipes = $0.response.results.map {
                         Item(topTitle: $0.headline ?? "",
                              bottomCopy: $0.bodyText ?? "",
                              imageName: nil,
                              imageURL: $0.thumbnail,
-                             id: $0.id)
+                             id: $0.id,
+                             bodyHTML: $0.body ?? "")
                     }
-                     })
+                })
                 .store(in: &subscriptions)
         }
     }
@@ -50,6 +51,7 @@ struct RecipeList: View {
         let imageName: String?
         let imageURL: URL?
         let id: String
+        let bodyHTML: String
 
         var image: Image? {
             if let imageName = imageName {
@@ -57,6 +59,14 @@ struct RecipeList: View {
             } else {
                 return nil
             }
+        }
+
+        var asDetailItem: RecipeDetail.Item {
+            RecipeDetail.Item(author: Name(first: "Thomas", last: "Kuzma"),
+                                               title: topTitle,
+                                               body: bodyHTML,
+                                               image: nil,
+                                               imageURL: imageURL)
         }
     }
 
@@ -69,7 +79,9 @@ struct RecipeList: View {
     var body: some View {
         List {
             ForEach(self.model.recipes) { item in
-                RecipeCell(item: item)
+                NavigationLink(destination: RecipeDetail(item: item.asDetailItem)) {
+                    RecipeCell(item: item)
+                }
             }
         }
         .refreshable {
@@ -77,6 +89,7 @@ struct RecipeList: View {
         }
         .listStyle(PlainListStyle())
         .navigationTitle("Recipes")
+        .navigationViewStyle(.stack)
         .onAppear{
             self.model.fetch()
         }

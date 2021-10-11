@@ -81,13 +81,6 @@ class GuardianAPI {
             .apiResponse(for: Self.EndPoint.recipes.url)
             .receive(on: apiQueue)
             .map(\.data)
-            .print()
-            .handleEvents(receiveSubscription: {_ in },
-                          receiveOutput: { data in
-                print(String(data: data, encoding: .utf8))
-            }, receiveCompletion: { _ in },
-                          receiveCancel: {},
-                          receiveRequest: {_ in })
             .decode(type: GuardianResponse.self, decoder: decoder)
             .mapError { error in
                 switch error {

@@ -24,6 +24,9 @@ struct RecipeResponse: Codable, Hashable {
         var bodyText: String? {
             return fields["bodyText"]
         }
+        var body: String? {
+            return fields["body"]
+        }
 
         var thumbnail: URL? {
             guard let thumbnailString = fields["thumbnail"],

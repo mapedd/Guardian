@@ -16,9 +16,21 @@ struct RecipeDetail: View {
     struct Item {
         let author: Name
         let title: String
-        let body: AttributedString
+        let body: String
         let image: Image?
         let imageURL: URL?
+
+
+
+        var attributedBody: AttributedString {
+
+            if let data = body.data(using: .utf8),
+               let attributedString = try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
+                return AttributedString(attributedString)
+            }
+            return AttributedString("No content to show")
+        }
+
     }
     var item: Item
 
@@ -66,11 +78,12 @@ struct RecipeDetail: View {
                 Text(item.title)
                     .font(.headline)
                 Divider()
-                Text(item.body)
+                Text(item.attributedBody)
                     .font(.body)
             }
             .padding()
         }
+        .ignoresSafeArea(edges: .top)
     }
 }
 
@@ -80,7 +93,7 @@ struct RecipeDetail_Previews: PreviewProvider {
     static var previews: some View {
         let item = RecipeDetail.Item(author: Name(first: "Thomas", last: "Brody"),
                                      title: "Kimchi & Friends",
-                                     body: AttributedString("Interesting recipe"),
+                                     body: "Interesting recipe",
                                      image: Image("test0"),
                                      imageURL: nil)
         RecipeDetail(item: item)
