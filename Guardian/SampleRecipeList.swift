@@ -21,6 +21,12 @@ struct SampleRecipeList {
                         imageName: "test1",
                         imageURL: nil,
                         id: "1",
+                        bodyHTML: ""),
+        RecipeList.Item(topTitle: "SUPER SPAGHETTI",
+                        bottomCopy: "Absolutely stunning - The New York Time",
+                        imageName: nil,
+                        imageURL: nil,
+                        id: "3",
                         bodyHTML: "")
     ]
 }

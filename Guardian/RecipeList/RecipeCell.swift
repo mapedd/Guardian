@@ -31,6 +31,9 @@ struct RecipeCell: View {
             AsyncImageWithPlaceholder(placeholderImageName: "placeholder",
                                       imageURL: item.imageURL,
                                       staticImage: item.image)
+                .cornerRadius(10)
+                .aspectRatio(3.0/2.0, contentMode: .fit)
+
             Spacer()
                 .frame(height: 8)
 
@@ -46,7 +49,15 @@ struct RecipeCell_Previews: PreviewProvider {
         let items = SampleRecipeList().recipeListItems
         Group {
             RecipeCell(item: items[0])
+                .preferredColorScheme(.dark)
+            RecipeCell(item: items[2]) // ← no image given
+                .preferredColorScheme(.dark)
             RecipeCell(item: items[1])
+                .preferredColorScheme(.dark)
+            RecipeCell(item: items[0])
+                .preferredColorScheme(.light)
+            RecipeCell(item: items[1])
+                .preferredColorScheme(.light)
         }
         .previewLayout(.sizeThatFits)
     }

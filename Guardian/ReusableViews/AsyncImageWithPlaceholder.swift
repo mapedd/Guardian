@@ -20,40 +20,46 @@ struct AsyncImageWithPlaceholder: View {
                                 ZStack {
                                     Image(placeholderImageName)
                                         .resizable()
-                                        .cornerRadius(10)
-                                        .aspectRatio(3.0/2.0, contentMode: .fill)
                                     ProgressView()
                                 }
                                 .opacity(0.3)
 
-
                             case .success(let image):
                                 image.resizable()
-                                    .cornerRadius(10)
-                                    .aspectRatio(3.0/2.0, contentMode: .fit)
                             case .failure:
-                                Image("placeholder")
+                                Image(placeholderImageName)
                                     .resizable()
-                                    .cornerRadius(10)
-                                    .aspectRatio(3.0/2.0, contentMode: .fill)
                             @unknown default:
-                                // Since the AsyncImagePhase enum isn't frozen,
-                                // we need to add this currently unused fallback
-                                // to handle any new cases that might be added
-                                // in the future:
                                 EmptyView()
                             }
                         }
         } else if let image = staticImage {
             image.resizable()
-                .cornerRadius(10)
-                .aspectRatio(3.0/2.0, contentMode: .fit)
+        } else {
+            Image(placeholderImageName)
+                .resizable()
         }
     }
 }
-//
-//struct AsyncImageWithPlaceholder_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AsyncImageWithPlaceholder()
-//    }
-//}
+
+struct AsyncImageWithPlaceholder_Previews: PreviewProvider {
+    // test 3 cases - success, loading, static
+    static var previews: some View {
+        Group {
+            AsyncImageWithPlaceholder(placeholderImageName: "placeholder",
+                                      imageURL: nil,
+                                      staticImage: nil)
+                .frame(width: 300, height: 200)
+
+            AsyncImageWithPlaceholder(placeholderImageName: "placeholder",
+                                      imageURL: nil,
+                                      staticImage: Image("test0"))
+                .frame(width: 300, height: 200)
+
+            AsyncImageWithPlaceholder(placeholderImageName: "placeholder",
+                                      imageURL: URL(string: "https://media.guim.co.uk/5bf2f99f2fe5e722a9bfbfdc8fb4ad02d736973e/201_1677_5591_3355/500.jpg")!,
+                                      staticImage: nil)
+                .frame(width: 300, height: 200)
+        }
+    }
+}

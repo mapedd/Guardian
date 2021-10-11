@@ -26,7 +26,7 @@ extension RecipeList {
         }
 
         var asDetailItem: RecipeDetail.Item {
-            RecipeDetail.Item(author: Name(first: "Thomas", last: "Kuzma"),
+            RecipeDetail.Item(author: Name(first: "Thomas", last: "Kuzma"),// here hardcoded
                               title: topTitle,
                               body: bodyHTML,
                               image: nil,

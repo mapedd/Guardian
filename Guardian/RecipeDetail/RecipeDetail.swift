@@ -16,45 +16,15 @@ struct RecipeDetail: View {
 
     var item: RecipeDetail.Item
 
+    @Environment(\.colorScheme) var colorScheme
+
     var body: some View {
 
         ScrollView {
-            VStack {
-                if item.imageURL != nil {
-                    AsyncImage(url: item.imageURL) { phase in
-                        switch phase {
-                        case .empty:
-                            ZStack {
-                                Image("placeholder")
-                                    .resizable()
-                                    .aspectRatio(3.0/2.0, contentMode: .fill)
-                                ProgressView()
-                            }
-                            .opacity(0.3)
-
-
-                        case .success(let image):
-                            image.resizable()
-                                .aspectRatio(3.0/2.0, contentMode: .fit)
-                        case .failure:
-                            Image("placeholder")
-                                .resizable()
-                                .aspectRatio(3.0/2.0, contentMode: .fill)
-                        @unknown default:
-                            // Since the AsyncImagePhase enum isn't frozen,
-                            // we need to add this currently unused fallback
-                            // to handle any new cases that might be added
-                            // in the future:
-                            EmptyView()
-                        }
-                    }
-                } else if let image = item.image {
-                    image.resizable()
-                        .aspectRatio(3.0/2.0, contentMode: .fit)
-                }
-
-            }
-            .overlay(TextOverlay(line0: "Thomas", line1: "Brody"))
+            AsyncImageWithPlaceholder(placeholderImageName: "placeholder",
+                                      imageURL: item.imageURL,
+                                      staticImage: item.image)
+                .overlay(TextOverlay(line0: item.author.first, line1: item.author.last))
             
 
             VStack(alignment: .leading) {
@@ -81,6 +51,12 @@ struct RecipeDetail_Previews: PreviewProvider {
                                      body: "Interesting recipe",
                                      image: Image("test0"),
                                      imageURL: nil)
-        RecipeDetail(item: item)
+        Group {
+            RecipeDetail(item: item)
+                .preferredColorScheme(.dark)
+
+            RecipeDetail(item: item)
+                .preferredColorScheme(.light)
+        }
     }
 }
