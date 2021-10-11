@@ -21,11 +21,25 @@ struct RecipeDetail: View {
                                       staticImage: item.image)
                 .overlay(TextOverlay(line0: item.author.name.first ?? "", line1: item.author.name.last ?? ""))
             
+            
 
             VStack(alignment: .leading) {
-                Text(item.title)
-                    .font(.headline)
-                    .accessibility(label: Text("item.title-\(item.title)"))
+                
+                HStack(alignment: .center) {
+                    Text(item.title)
+                        .font(.headline)
+                        .accessibility(label: Text("item.title-\(item.title)"))
+                    Spacer()
+                    AsyncImageWithPlaceholder(placeholderImageName: "personPlaceholder",
+                                              imageURL: item.author.pictureURL,
+                                              staticImage: nil)
+                        .frame(width: 80, height: 80)
+                        .clipShape(Circle())
+                        .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                        .shadow(radius: 7)
+                        .offset(y: -75)
+
+                }
                 Divider()
                 Text(item.attributedBody)
                     .font(.body)
