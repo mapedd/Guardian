@@ -13,30 +13,8 @@ struct Name {
 }
 
 struct RecipeDetail: View {
-    struct Item {
-        let author: Name
-        let title: String
-        let body: String
-        let image: Image?
-        let imageURL: URL?
 
-
-
-        var attributedBody: AttributedString {
-
-            if let data = body.data(using: .utf8),
-               let attributedString = try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
-                return AttributedString(attributedString)
-            }
-            return AttributedString("No content to show")
-        }
-        
-        var accessibleLabelBody: String {
-            return String(body.prefix(10))
-        }
-
-    }
-    var item: Item
+    var item: RecipeDetail.Item
 
     var body: some View {
 

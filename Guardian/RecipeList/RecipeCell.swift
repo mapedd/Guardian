@@ -11,52 +11,29 @@ struct RecipeCell: View {
     var item: RecipeList.Item
     var body: some View {
         VStack(alignment: .leading) {
+            Spacer()
+                .frame(height: 8)
+            
             Text(item.topTitle)
                 .foregroundColor(.gray)
                 .font(.caption)
                 .accessibility(label: Text("title \(item.topTitle)"))
+
+            Spacer()
+                .frame(height: 8)
+
             Text(item.bottomCopy)
                 .font(.headline)
                 .lineLimit(2)
                 .accessibility(label: Text("subtitle \(item.bottomCopy)"))
 
 
-            if item.imageURL != nil {
-                AsyncImage(url: item.imageURL) { phase in
-                                switch phase {
-                                case .empty:
-                                    ZStack {
-                                        Image("placeholder")
-                                            .resizable()
-                                            .cornerRadius(10)
-                                            .aspectRatio(3.0/2.0, contentMode: .fill)
-                                        ProgressView()
-                                    }
-                                    .opacity(0.3)
+            AsyncImageWithPlaceholder(placeholderImageName: "placeholder",
+                                      imageURL: item.imageURL,
+                                      staticImage: item.image)
+            Spacer()
+                .frame(height: 8)
 
-
-                                case .success(let image):
-                                    image.resizable()
-                                        .cornerRadius(10)
-                                        .aspectRatio(3.0/2.0, contentMode: .fit)
-                                case .failure:
-                                    Image("placeholder")
-                                        .resizable()
-                                        .cornerRadius(10)
-                                        .aspectRatio(3.0/2.0, contentMode: .fill)
-                                @unknown default:
-                                    // Since the AsyncImagePhase enum isn't frozen,
-                                    // we need to add this currently unused fallback
-                                    // to handle any new cases that might be added
-                                    // in the future:
-                                    EmptyView()
-                                }
-                            }
-            } else if let image = item.image {
-                image.resizable()
-                    .cornerRadius(10)
-                    .aspectRatio(3.0/2.0, contentMode: .fit)
-            }
 
         }
         .accessibility(label: Text(item.bottomCopy))
