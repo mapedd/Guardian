@@ -30,6 +30,10 @@ struct RecipeDetail: View {
             }
             return AttributedString("No content to show")
         }
+        
+        var accessibleLabelBody: String {
+            return String(body.prefix(10))
+        }
 
     }
     var item: Item
@@ -73,13 +77,16 @@ struct RecipeDetail: View {
 
             }
             .overlay(TextOverlay(line0: "Thomas", line1: "Brody"))
+            
 
             VStack(alignment: .leading) {
                 Text(item.title)
                     .font(.headline)
+                    .accessibility(label: Text("item.title-\(item.title)"))
                 Divider()
                 Text(item.attributedBody)
                     .font(.body)
+                    .accessibility(label: Text("item.content-\(item.accessibleLabelBody)"))
             }
             .padding()
         }

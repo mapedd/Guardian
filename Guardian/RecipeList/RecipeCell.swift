@@ -14,9 +14,11 @@ struct RecipeCell: View {
             Text(item.topTitle)
                 .foregroundColor(.gray)
                 .font(.caption)
+                .accessibility(label: Text("title \(item.topTitle)"))
             Text(item.bottomCopy)
                 .font(.headline)
                 .lineLimit(2)
+                .accessibility(label: Text("subtitle \(item.bottomCopy)"))
 
 
             if item.imageURL != nil {

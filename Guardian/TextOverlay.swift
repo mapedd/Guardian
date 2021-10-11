@@ -26,6 +26,7 @@ struct TextOverlay: View {
                     .bold()
                 Text(line1)
             }
+            .accessibilityLabel("overlay-\(line0+line1)")
             .padding()
         }
         .foregroundColor(.white)

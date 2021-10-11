@@ -1,15 +1,13 @@
 //
 //  GuardianAPITests.swift
-//  GuardianTests
+//  GuardianBackendTests
 //
 //  Created by Tomasz Kuzma on 06/10/2021.
 //
 
 import XCTest
-@testable import Guardian
 import Combine
 import GuardianBackend
-
 
 class GuardianAPITests: XCTestCase {
 
@@ -17,8 +15,14 @@ class GuardianAPITests: XCTestCase {
         let apiProvider = MockAPIProvider()
         let api = GuardianAPI(apiProvider: apiProvider)
         let recipes = try wait(for:api.recipes())
-        let expected = GuardianResponse(response: RecipeResponse(results: []))
-        XCTAssertEqual(recipes, expected)
+        let expectedItems = [
+            ["id" : "id0"],
+            ["id" : "id1"]
+        ]
+        let result = recipes.response.results.map {
+            return ["id" : $0.id]
+        }
+        XCTAssertEqual(result, expectedItems)
     }
 
     func testAPICallsCorrectURL() throws {

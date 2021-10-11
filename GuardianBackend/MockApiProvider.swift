@@ -23,7 +23,7 @@ public class MockAPIProvider: APIProvider {
     }
     func defaultResponse(url: URL) -> (data:Data,response: URLResponse) {
 
-        let path = bundle.path(forResource: "sampleEmpty", ofType: "json")!
+        let path = bundle.path(forResource: "sampleFull", ofType: "json")!
         let data = try! Data(contentsOf: URL(fileURLWithPath: path))
         return (data, urlResponse(for: url))
     }

@@ -11,22 +11,6 @@ import XCTest
 
 typealias UITestContext = (app: XCUIApplication, testCase: UITestCase)
 
-class ScreenModel {
-
-    var app: XCUIApplication {
-        return context.app
-    }
-
-    var testCase: UITestCase {
-        return context.testCase
-    }
-
-    let context: UITestContext
-
-    init(_ context: UITestContext) {
-        self.context = context
-    }
-}
 
 class UITestCase: XCTestCase {
     private(set) var app: XCUIApplication!
