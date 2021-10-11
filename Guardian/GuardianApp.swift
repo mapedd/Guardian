@@ -6,12 +6,24 @@
 //
 
 import SwiftUI
+import GuardianBackend
 
 @main
 struct GuardianApp: App {
+    var testing: Bool {
+        return ProcessInfo.processInfo.environment["mockNetwork"] != nil
+    }
+    
+    var provider : APIProvider {
+        if testing {
+            return MockAPIProvider()
+        } else {
+            return URLSession.shared
+        }
+    }
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(apiProvider: provider)
         }
     }
 }

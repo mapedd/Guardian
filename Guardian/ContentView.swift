@@ -7,9 +7,16 @@
 
 import SwiftUI
 import Combine
+import GuardianBackend
 
 struct ContentView: View {
-    let viewModel = RecipeList.ViewModel(apiProvider: URLSession.shared)
+    
+    let viewModel: RecipeList.ViewModel
+    
+    init(apiProvider: APIProvider) {
+        viewModel = RecipeList.ViewModel(apiProvider: apiProvider)
+    }
+    
     var body: some View {
         NavigationView {
             RecipeList(model: viewModel)
@@ -20,7 +27,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(apiProvider: MockAPIProvider())
     }
 
 }

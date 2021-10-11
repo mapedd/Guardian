@@ -9,9 +9,11 @@ import Foundation
 
 class RecipeList : ScreenModel {
     func waitForDataToLoad() -> Self {
+        testCase.waitFor(app.tables.cells.firstMatch)
         return self
     }
     func tapItem(at index: Int) -> RecipeDetail {
+        app.cells.element(boundBy: index).tap()
         return RecipeDetail(context)
     }
 }
