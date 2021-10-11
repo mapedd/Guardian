@@ -14,6 +14,7 @@ struct ContentView: View {
         NavigationView {
             RecipeList(model: viewModel)
         }
+        .accentColor( .white)
     }
 }
 
