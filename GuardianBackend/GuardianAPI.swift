@@ -36,7 +36,7 @@ enum TagToShow : String {
 
 public class GuardianAPI {
 
-    public enum Error: LocalizedError {
+    public enum Error: LocalizedError, Equatable {
         case unreachable(URL)
         case invalidResponse
         case wrongJSONStructure
@@ -55,7 +55,7 @@ public class GuardianAPI {
 
         case recipes
 
-        var url: URL {
+        public var url: URL {
             switch self {
             case .recipes:
                 return EndPoint.baseURL

@@ -13,7 +13,7 @@
 		041FBAED271474360083DB99 /* GuardianBackend.h in Headers */ = {isa = PBXBuildFile; fileRef = 041FBADF271474360083DB99 /* GuardianBackend.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		041FBAF0271474360083DB99 /* GuardianBackend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041FBADD271474360083DB99 /* GuardianBackend.framework */; };
 		041FBAF1271474360083DB99 /* GuardianBackend.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 041FBADD271474360083DB99 /* GuardianBackend.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		041FBAF9271474440083DB99 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440295E270E19FB007D3C5D /* Network.swift */; };
+		041FBAF9271474440083DB99 /* GuardianAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440295E270E19FB007D3C5D /* GuardianAPI.swift */; };
 		041FBAFA271474440083DB99 /* RecipeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04402966270F56B9007D3C5D /* RecipeResponse.swift */; };
 		041FBAFB271474440083DB99 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04402974271074AC007D3C5D /* APIProvider.swift */; };
 		041FBAFC271474510083DB99 /* MockApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440296C270F8302007D3C5D /* MockApiProvider.swift */; };
@@ -39,6 +39,7 @@
 		04402969270F7CB9007D3C5D /* UITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04402968270F7CB9007D3C5D /* UITestCase.swift */; };
 		0440296B270F7D7B007D3C5D /* RecipeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440296A270F7D7B007D3C5D /* RecipeDetail.swift */; };
 		044029772710790C007D3C5D /* TextOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044029762710790C007D3C5D /* TextOverlay.swift */; };
+		047CD1032714B7460068AA8C /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CD1022714B7460068AA8C /* LoadingIndicator.swift */; };
 		048D1BFE27149F89004A5122 /* AsyncImageWithPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D1BFD27149F89004A5122 /* AsyncImageWithPlaceholder.swift */; };
 /* End PBXBuildFile section */
 
@@ -118,7 +119,7 @@
 		04402958270DFE89007D3C5D /* RecipeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeList.swift; sourceTree = "<group>"; };
 		0440295A270DFFD7007D3C5D /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		0440295C270E107E007D3C5D /* SampleRecipeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleRecipeList.swift; sourceTree = "<group>"; };
-		0440295E270E19FB007D3C5D /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		0440295E270E19FB007D3C5D /* GuardianAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardianAPI.swift; sourceTree = "<group>"; };
 		04402966270F56B9007D3C5D /* RecipeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeResponse.swift; sourceTree = "<group>"; };
 		04402968270F7CB9007D3C5D /* UITestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestCase.swift; sourceTree = "<group>"; };
 		0440296A270F7D7B007D3C5D /* RecipeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetail.swift; sourceTree = "<group>"; };
@@ -128,6 +129,7 @@
 		044029722710702E007D3C5D /* XCTestCase+Matchers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Matchers.swift"; sourceTree = "<group>"; };
 		04402974271074AC007D3C5D /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		044029762710790C007D3C5D /* TextOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextOverlay.swift; sourceTree = "<group>"; };
+		047CD1022714B7460068AA8C /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
 		048D1BFD27149F89004A5122 /* AsyncImageWithPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageWithPlaceholder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,7 +192,7 @@
 				0440296E2710500F007D3C5D /* sampleEmpty.json */,
 				041FBB0227147E030083DB99 /* sampleFull.json */,
 				0440296C270F8302007D3C5D /* MockApiProvider.swift */,
-				0440295E270E19FB007D3C5D /* Network.swift */,
+				0440295E270E19FB007D3C5D /* GuardianAPI.swift */,
 				04402974271074AC007D3C5D /* APIProvider.swift */,
 				04402966270F56B9007D3C5D /* RecipeResponse.swift */,
 				041FBADF271474360083DB99 /* GuardianBackend.h */,
@@ -313,6 +315,7 @@
 			children = (
 				044029762710790C007D3C5D /* TextOverlay.swift */,
 				048D1BFD27149F89004A5122 /* AsyncImageWithPlaceholder.swift */,
+				047CD1022714B7460068AA8C /* LoadingIndicator.swift */,
 			);
 			path = ReusableViews;
 			sourceTree = "<group>";
@@ -524,7 +527,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				041FBAFA271474440083DB99 /* RecipeResponse.swift in Sources */,
-				041FBAF9271474440083DB99 /* Network.swift in Sources */,
+				041FBAF9271474440083DB99 /* GuardianAPI.swift in Sources */,
 				041FBAFB271474440083DB99 /* APIProvider.swift in Sources */,
 				041FBAFC271474510083DB99 /* MockApiProvider.swift in Sources */,
 			);
@@ -544,6 +547,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				047CD1032714B7460068AA8C /* LoadingIndicator.swift in Sources */,
 				0440296B270F7D7B007D3C5D /* RecipeDetail.swift in Sources */,
 				048D1BFE27149F89004A5122 /* AsyncImageWithPlaceholder.swift in Sources */,
 				04402931270DFCA1007D3C5D /* ContentView.swift in Sources */,

@@ -15,6 +15,7 @@ struct ContentView: View {
     
     init(apiProvider: APIProvider) {
         viewModel = RecipeList.ViewModel(apiProvider: apiProvider)
+        viewModel.fetch(refresh: false)
     }
     
     var body: some View {

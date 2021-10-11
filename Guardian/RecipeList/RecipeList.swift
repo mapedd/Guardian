@@ -10,6 +10,7 @@ import Combine
 import GuardianBackend
 
 struct RecipeList: View {
+
     @ObservedObject var model: ViewModel
 
     init(model: ViewModel) {
@@ -19,8 +20,6 @@ struct RecipeList: View {
     var body: some View {
         List {
             ForEach(self.model.recipes) { item in
-
-
                 ZStack { // wrapping in ZStack to hide chevron
                     RecipeCell(item: item)
                     NavigationLink(destination: {
@@ -29,25 +28,41 @@ struct RecipeList: View {
 
                     }).opacity(0)
                 }
-                
             }
         }
         .refreshable {
-            self.model.fetch()
+            self.model.fetch(refresh: true)
         }
         .listStyle(PlainListStyle())
         .navigationTitle("Recipes")
         .navigationViewStyle(.stack)
-        .onAppear{
-            self.model.fetch()
+        .alert(isPresented: model.showError) {
+            Alert(title: Text("Error loading data"),
+                  message: Text("\(model.error?.localizedDescription ?? "")"),
+                  dismissButton: nil)
         }
+        .loadingIndicator(model.loading)
     }
 }
 
 struct RecipeList_Previews: PreviewProvider {
+    static func successViewModel () -> RecipeList.ViewModel {
+        return RecipeList.ViewModel(apiProvider: MockAPIProvider(returnError: false))
+    }
+    static func errorViewModel() -> RecipeList.ViewModel {
+        return RecipeList.ViewModel(apiProvider: MockAPIProvider(returnError: true))
+    }
     static var previews: some View {
-        let apiProvider = MockAPIProvider()
-        let viewModel = RecipeList.ViewModel(apiProvider: apiProvider)
-        RecipeList(model: viewModel)
+        Group {
+          // groupings do not seem to work in live mode
+//            RecipeList(model: Self.errorViewModel())
+//                .previewDisplayName("failure")
+//                .previewLayout(.fixed(width: 320, height: 800))
+
+            RecipeList(model: Self.successViewModel())
+                .previewDisplayName("success")
+                .previewLayout(.fixed(width: 320, height: 800))
+
+        }
     }
 }

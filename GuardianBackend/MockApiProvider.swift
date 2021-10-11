@@ -9,9 +9,10 @@ import Foundation
 import Combine
 
 public class MockAPIProvider: APIProvider {
-    
-    public init() {
-        
+
+    let returnError: Bool
+    public init(returnError: Bool = false) {
+        self.returnError = returnError
     }
     
     class Foo {
@@ -50,10 +51,16 @@ public class MockAPIProvider: APIProvider {
             }
         }
         else {
-            let response = defaultResponse(url: url)
-            return Just((data: response.data, response: response.response))
-                .setFailureType(to: URLError.self)
-                .eraseToAnyPublisher()
+            if self.returnError {
+                let error = URLError(URLError.Code.badServerResponse)
+                let result = Result<APIResponse, URLError>.failure(error)
+                return result.publisher.eraseToAnyPublisher()
+            } else {
+                let response = defaultResponse(url: url)
+                return Just((data: response.data, response: response.response))
+                    .setFailureType(to: URLError.self)
+                    .eraseToAnyPublisher()
+            }
         }
     }
 }

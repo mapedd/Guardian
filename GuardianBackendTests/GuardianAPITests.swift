@@ -11,7 +11,7 @@ import GuardianBackend
 
 class GuardianAPITests: XCTestCase {
 
-    func testAPIReturnsEmptyDataViaNetwork() throws {
+    func testAPIReturnsValidData() throws {
         let apiProvider = MockAPIProvider()
         let api = GuardianAPI(apiProvider: apiProvider)
         let recipes = try wait(for:api.recipes())
@@ -23,6 +23,14 @@ class GuardianAPITests: XCTestCase {
             return ["id" : $0.id]
         }
         XCTAssertEqual(result, expectedItems)
+    }
+
+    func testAPIReturnsErrorMappedFromURLError() throws {
+        let apiProvider = MockAPIProvider(returnError: true)
+        let api = GuardianAPI(apiProvider: apiProvider)
+        let errorReceived = try waitFailure(for: api.recipes())
+        let expectedError = GuardianAPI.Error.unreachable(GuardianAPI.EndPoint.recipes.url)
+        XCTAssertEqual(errorReceived, expectedError)
     }
 
     func testAPICallsCorrectURL() throws {
