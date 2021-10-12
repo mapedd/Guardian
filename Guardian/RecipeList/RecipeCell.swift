@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RecipeCell: View {
     var item: RecipeList.Item
+
     var body: some View {
         VStack(alignment: .leading) {
             Spacer()

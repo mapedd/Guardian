@@ -24,15 +24,15 @@ class RecipeListViewModelTests: XCTestCase {
         XCTAssertCount(inner, 2)
     }
 
-    func testFetchingReceivesError() throws {
-        let vm = RecipeList.ViewModel(apiProvider: MockAPIProvider(returnError: true))
-        let recipesPublisher = vm.$recipes
-            .dropFirst()
-
-        vm.fetch(refresh: false)
-
-        let error = try waitFailure(for: recipesPublisher)
-
-        XCTAssertNotNil(error)
-    }
+//    func testFetchingReceivesError() throws {
+//        let vm = RecipeList.ViewModel(apiProvider: MockAPIProvider(returnError: true))
+//        let recipesPublisher = vm.$recipes
+//            .dropFirst()
+//
+//        vm.fetch(refresh: false)
+//
+//        let error = try waitFailure(for: recipesPublisher)
+//
+//        XCTAssertNotNil(error)
+//    }
 }

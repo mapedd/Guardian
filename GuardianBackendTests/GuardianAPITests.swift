@@ -35,7 +35,12 @@ class GuardianAPITests: XCTestCase {
     }
 
     func testReturningUndecodableJSONError() throws {
-        
+        let apiProvider = MockAPIProvider()
+        apiProvider.resultToReturn = Result.success(apiProvider.sample(file: .wrongFormat))
+        let api = GuardianAPI(apiProvider: apiProvider)
+        let errorReceived = try waitFailure(for: api.recipes())
+        let expectedError = GuardianAPI.Error.wrongJSONStructure
+        XCTAssertEqual(errorReceived, expectedError)
     }
 
     func testAPICallsCorrectURL() throws {

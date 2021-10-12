@@ -8,6 +8,12 @@
 import Foundation
 import Combine
 
+public enum SampleFile : String {
+    case empty = "sampleEmpty"
+    case full = "sampleFull"
+    case wrongFormat = "sampleWrongFormat"
+}
+
 public class MockAPIProvider: APIProvider {
 
     let returnError: Bool
@@ -23,10 +29,13 @@ public class MockAPIProvider: APIProvider {
         HTTPURLResponse(url: url, statusCode: 200, httpVersion: "HTTP/1.1", headerFields: nil)!
     }
     func defaultResponse(url: URL) -> (data:Data,response: URLResponse) {
+        return (sample(file: .full), urlResponse(for: url))
+    }
 
-        let path = bundle.path(forResource: "sampleFull", ofType: "json")!
+    public func sample(file: SampleFile) -> Data {
+        let path = bundle.path(forResource: file.rawValue, ofType: "json")!
         let data = try! Data(contentsOf: URL(fileURLWithPath: path))
-        return (data, urlResponse(for: url))
+        return data
     }
 
     let bundle = Bundle(for: Foo.self)

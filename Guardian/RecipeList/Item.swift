@@ -30,6 +30,9 @@ extension RecipeList {
         let bodyHTML: String
         let author: Author
 
+//        let buildDestination: (Item) -> Destination
+
+
         var image: Image? {
             if let imageName = imageName {
                 return Image(imageName)
