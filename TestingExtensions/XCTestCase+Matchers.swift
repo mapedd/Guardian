@@ -15,5 +15,8 @@ extension XCTestCase {
     public func XCTAssertContains(_ testedString: String, _ expectedSubstring: String) {
         XCTAssertTrue(testedString.contains(expectedSubstring))
     }
+    public func XCTAssertURL(_ testedURL : URL, _ expectedAbsoluteString: String) {
+        XCTAssertEqual(testedURL.absoluteString, expectedAbsoluteString)
+    }
 }
 

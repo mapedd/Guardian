@@ -11,7 +11,7 @@ import GuardianBackend
 import TestingExtensions
 
 class RecipeListViewModelTests: XCTestCase {
-    
+
     func testFetchingNoRefresh() throws {
         let vm = RecipeList.ViewModel(apiProvider: MockAPIProvider())
         let recipesPublisher = vm.$recipes.collectNext(1)
@@ -28,7 +28,7 @@ class RecipeListViewModelTests: XCTestCase {
         vm.fetch(refresh: false)
 
         let error: [GuardianAPI.Error?] = try waitFor(firstOutput: errorPublisher)
-        let expectedErrors = [GuardianAPI.Error.unreachable(GuardianAPI.EndPoint.recipes.url)]
+        let expectedErrors = [GuardianAPI.Error.unreachable(search_delli().url)]
         XCTAssertEqual(error, expectedErrors)
     }
 

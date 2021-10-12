@@ -16,7 +16,8 @@ struct GuardianApp: App {
             if isTesting { // do not load anything in the unit tests
                 EmptyView()
             } else {
-                ContentView(apiProvider: self.provider)
+                ContentView(apiProvider: self.provider,
+                            showingDetailsScreen: self.showingDetails)
             }
         }
     }

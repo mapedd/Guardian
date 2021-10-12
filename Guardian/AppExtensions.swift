@@ -10,12 +10,21 @@ import SwiftUI
 import GuardianBackend
 
 extension App {
+
+    var env: [String:String] {
+        ProcessInfo.processInfo.environment
+    }
+
     var mockedNetwork: Bool {
-        return ProcessInfo.processInfo.environment["mockNetwork"] != nil
+        env["mockNetwork"] != nil
     }
 
     var isTesting: Bool {
-        ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil
+        env["XCTestConfigurationFilePath"] != nil
+    }
+
+    var showingDetails: Bool {
+        env["showDetailScreen"] != nil
     }
 
     var provider : APIProvider {

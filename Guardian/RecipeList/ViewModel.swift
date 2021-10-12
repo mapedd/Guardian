@@ -26,8 +26,17 @@ extension RecipeList {
             })
         }
 
-        public init(apiProvider: APIProvider) {
-            self.api = GuardianAPI(apiProvider: apiProvider)
+        static func endPoint(_ showDetails: Bool) -> EndPoint {
+            if showDetails {
+                return search_tomek()
+            } else {
+                return search_delli()
+            }
+        }
+
+        public init(apiProvider: APIProvider, showDetailsScreen: Bool = false) {
+            self.api = GuardianAPI(apiProvider: apiProvider,
+                                   endpoint: Self.endPoint(showDetailsScreen))
         }
 
         let api: GuardianAPI
@@ -50,22 +59,6 @@ extension RecipeList {
                     self.recipes = $0.asListItems
                 })
                 .store(in: &subscriptions)
-        }
-    }
-}
-
-extension GuardianResponse {
-    var asListItems : [RecipeList.Item] {
-        return response.results.map {
-            let name = Name(first: $0.authorFirstName, last: $0.authorLastName)
-            let author = Author(name: name, pictureURL: $0.authPicURL)
-            return RecipeList.Item(topTitle: $0.headline ?? "",
-                                   bottomCopy: $0.bodyText ?? "",
-                                   imageName: nil,
-                                   imageURL: $0.thumbnail,
-                                   id: $0.id,
-                                   bodyHTML: $0.body ?? "",
-                                   author: author)
         }
     }
 }

@@ -14,7 +14,8 @@ class GuardianAPITests: XCTestCase {
 
     func testAPIReturnsValidData() throws {
         let apiProvider = MockAPIProvider()
-        let api = GuardianAPI(apiProvider: apiProvider)
+        let api = GuardianAPI(apiProvider: apiProvider,
+                              endpoint: EndPoint.search(filters: []))
         let recipes = try wait(for:api.recipes())
         let expectedItems = [
             ["id" : "id0"],
@@ -27,17 +28,21 @@ class GuardianAPITests: XCTestCase {
     }
 
     func testAPIReturnsErrorMappedFromURLError() throws {
+        let endPoint = EndPoint.search(filters: [])
         let apiProvider = MockAPIProvider(returnError: true)
-        let api = GuardianAPI(apiProvider: apiProvider)
+        let api = GuardianAPI(apiProvider: apiProvider,
+                              endpoint: endPoint)
         let errorReceived = try waitFailure(for: api.recipes())
-        let expectedError = GuardianAPI.Error.unreachable(GuardianAPI.EndPoint.recipes.url)
+        
+        let expectedError = GuardianAPI.Error.unreachable(endPoint.url)
         XCTAssertEqual(errorReceived, expectedError)
     }
 
     func testReturningUndecodableJSONError() throws {
         let apiProvider = MockAPIProvider()
         apiProvider.resultToReturn = Result.success(apiProvider.sample(file: .wrongFormat))
-        let api = GuardianAPI(apiProvider: apiProvider)
+        let api = GuardianAPI(apiProvider: apiProvider,
+                              endpoint: EndPoint.search(filters: []))
         let errorReceived = try waitFailure(for: api.recipes())
         let expectedError = GuardianAPI.Error.wrongJSONStructure
         XCTAssertEqual(errorReceived, expectedError)
@@ -45,7 +50,8 @@ class GuardianAPITests: XCTestCase {
 
     func testAPICallsCorrectURL() throws {
         let apiProvider = MockAPIProvider()
-        let api = GuardianAPI(apiProvider: apiProvider)
+        let api = GuardianAPI(apiProvider: apiProvider,
+                              endpoint: EndPoint.search(filters: []))
         let _ = try wait(for:api.recipes())
         XCTAssertCount(apiProvider.urlsInserted, 1)
         let url = try XCTUnwrap(apiProvider.urlsInserted.first)

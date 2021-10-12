@@ -10,7 +10,7 @@ import XCTest
 
 class RecipeListConversionTests: XCTestCase {
 
-    func testMappingFromRecipeItemToDetail() {
+    func testMappingFromRecipeItemToDetail() throws {
         let author = Author(name: Name(first: "first", last: "last"),
                             pictureURL: URL(string: "http://picture.url")!)
         let recipeListItem = RecipeList.Item(topTitle: "topTitle",
@@ -21,11 +21,16 @@ class RecipeListConversionTests: XCTestCase {
                                              bodyHTML: "body HTML",
                                              author: author)
 
-        let detail = recipeListItem.asDetailItem
+        let detail = try XCTUnwrap(recipeListItem.asDetailItem)
 
         XCTAssertEqual(detail.body, "body HTML")
         XCTAssertEqual(detail.author, author)
         XCTAssertEqual(detail.title, "topTitle")
         XCTAssertEqual(detail.imageURL, URL(string: "http://delli.market")!)
+    }
+
+
+    func testMappingNoDetails() {
+
     }
 }

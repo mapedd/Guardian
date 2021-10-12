@@ -11,7 +11,6 @@
 		041FBAB2271471580083DB99 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041FBAB1271471580083DB99 /* Item.swift */; };
 		041FBAB4271471C10083DB99 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041FBAB3271471C10083DB99 /* ViewModel.swift */; };
 		041FBAE5271474360083DB99 /* GuardianBackend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041FBADD271474360083DB99 /* GuardianBackend.framework */; };
-		041FBAED271474360083DB99 /* GuardianBackend.h in Headers */ = {isa = PBXBuildFile; fileRef = 041FBADF271474360083DB99 /* GuardianBackend.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		041FBAF0271474360083DB99 /* GuardianBackend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041FBADD271474360083DB99 /* GuardianBackend.framework */; };
 		041FBAF1271474360083DB99 /* GuardianBackend.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 041FBADD271474360083DB99 /* GuardianBackend.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		041FBAF9271474440083DB99 /* GuardianAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440295E270E19FB007D3C5D /* GuardianAPI.swift */; };
@@ -36,6 +35,10 @@
 		04402969270F7CB9007D3C5D /* UITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04402968270F7CB9007D3C5D /* UITestCase.swift */; };
 		0440296B270F7D7B007D3C5D /* RecipeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440296A270F7D7B007D3C5D /* RecipeDetail.swift */; };
 		044029772710790C007D3C5D /* TextOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044029762710790C007D3C5D /* TextOverlay.swift */; };
+		044D95642715C34E00BBEF53 /* EndPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D95632715C34E00BBEF53 /* EndPointTests.swift */; };
+		044D95662715D33200BBEF53 /* RecipeItemMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D95652715D33200BBEF53 /* RecipeItemMapping.swift */; };
+		044D95682715DE6600BBEF53 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D95672715DE6600BBEF53 /* EndPoint.swift */; };
+		044D956A2715E09900BBEF53 /* URL+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D95692715E09900BBEF53 /* URL+Helpers.swift */; };
 		047CD1032714B7460068AA8C /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CD1022714B7460068AA8C /* LoadingIndicator.swift */; };
 		047CD1292714D7B60068AA8C /* XCTestCase+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044029702710525E007D3C5D /* XCTestCase+Combine.swift */; };
 		047CD12A2714D7B60068AA8C /* XCTestCase+Matchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044029722710702E007D3C5D /* XCTestCase+Matchers.swift */; };
@@ -113,7 +116,6 @@
 		041FBAB1271471580083DB99 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		041FBAB3271471C10083DB99 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		041FBADD271474360083DB99 /* GuardianBackend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GuardianBackend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		041FBADF271474360083DB99 /* GuardianBackend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuardianBackend.h; sourceTree = "<group>"; };
 		041FBAE4271474360083DB99 /* GuardianBackendTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuardianBackendTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		041FBB0227147E030083DB99 /* sampleFull.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sampleFull.json; sourceTree = "<group>"; };
 		041FBB0B271481C60083DB99 /* ReceipeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceipeList.swift; sourceTree = "<group>"; };
@@ -141,6 +143,10 @@
 		044029722710702E007D3C5D /* XCTestCase+Matchers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Matchers.swift"; sourceTree = "<group>"; };
 		04402974271074AC007D3C5D /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		044029762710790C007D3C5D /* TextOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextOverlay.swift; sourceTree = "<group>"; };
+		044D95632715C34E00BBEF53 /* EndPointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointTests.swift; sourceTree = "<group>"; };
+		044D95652715D33200BBEF53 /* RecipeItemMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeItemMapping.swift; sourceTree = "<group>"; };
+		044D95672715DE6600BBEF53 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		044D95692715E09900BBEF53 /* URL+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Helpers.swift"; sourceTree = "<group>"; };
 		047CD1022714B7460068AA8C /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
 		047CD11D2714D7980068AA8C /* TestingExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TestingExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		047CD12B2714D7E30068AA8C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -211,6 +217,7 @@
 				04402958270DFE89007D3C5D /* RecipeList.swift */,
 				0440295A270DFFD7007D3C5D /* RecipeCell.swift */,
 				041FBAB1271471580083DB99 /* Item.swift */,
+				044D95652715D33200BBEF53 /* RecipeItemMapping.swift */,
 				041FBAB3271471C10083DB99 /* ViewModel.swift */,
 			);
 			path = RecipeList;
@@ -219,14 +226,13 @@
 		041FBADE271474360083DB99 /* GuardianBackend */ = {
 			isa = PBXGroup;
 			children = (
-				0440296E2710500F007D3C5D /* sampleEmpty.json */,
-				04D937E127158079002DEB55 /* sampleWrongFormat.json */,
-				041FBB0227147E030083DB99 /* sampleFull.json */,
-				0440296C270F8302007D3C5D /* MockApiProvider.swift */,
 				0440295E270E19FB007D3C5D /* GuardianAPI.swift */,
+				044D95692715E09900BBEF53 /* URL+Helpers.swift */,
+				044D95672715DE6600BBEF53 /* EndPoint.swift */,
 				04402974271074AC007D3C5D /* APIProvider.swift */,
 				04402966270F56B9007D3C5D /* RecipeResponse.swift */,
-				041FBADF271474360083DB99 /* GuardianBackend.h */,
+				044D956C2715E6F400BBEF53 /* SampleData */,
+				044D956B2715E6E800BBEF53 /* ReusableMocks */,
 			);
 			path = GuardianBackend;
 			sourceTree = "<group>";
@@ -236,6 +242,7 @@
 			children = (
 				0440293F270DFCA3007D3C5D /* GuardianAPITests.swift */,
 				04D937E3271583DC002DEB55 /* RecipeResponseTests.swift */,
+				044D95632715C34E00BBEF53 /* EndPointTests.swift */,
 			);
 			path = GuardianBackendTests;
 			sourceTree = "<group>";
@@ -327,6 +334,24 @@
 			path = GuardianUITests;
 			sourceTree = "<group>";
 		};
+		044D956B2715E6E800BBEF53 /* ReusableMocks */ = {
+			isa = PBXGroup;
+			children = (
+				0440296C270F8302007D3C5D /* MockApiProvider.swift */,
+			);
+			path = ReusableMocks;
+			sourceTree = "<group>";
+		};
+		044D956C2715E6F400BBEF53 /* SampleData */ = {
+			isa = PBXGroup;
+			children = (
+				0440296E2710500F007D3C5D /* sampleEmpty.json */,
+				04D937E127158079002DEB55 /* sampleWrongFormat.json */,
+				041FBB0227147E030083DB99 /* sampleFull.json */,
+			);
+			path = SampleData;
+			sourceTree = "<group>";
+		};
 		047CD11E2714D7980068AA8C /* TestingExtensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,7 +397,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				041FBAED271474360083DB99 /* GuardianBackend.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,7 +634,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				041FBAFA271474440083DB99 /* RecipeResponse.swift in Sources */,
+				044D956A2715E09900BBEF53 /* URL+Helpers.swift in Sources */,
 				041FBAF9271474440083DB99 /* GuardianAPI.swift in Sources */,
+				044D95682715DE6600BBEF53 /* EndPoint.swift in Sources */,
 				041FBAFB271474440083DB99 /* APIProvider.swift in Sources */,
 				041FBAFC271474510083DB99 /* MockApiProvider.swift in Sources */,
 			);
@@ -622,6 +648,7 @@
 			files = (
 				04D937E4271583DC002DEB55 /* RecipeResponseTests.swift in Sources */,
 				041FBB0827147F830083DB99 /* GuardianAPITests.swift in Sources */,
+				044D95642715C34E00BBEF53 /* EndPointTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,6 +667,7 @@
 				041FBAB4271471C10083DB99 /* ViewModel.swift in Sources */,
 				042A013727149C3F00124999 /* DetailItem.swift in Sources */,
 				04D937E027157E9C002DEB55 /* AppExtensions.swift in Sources */,
+				044D95662715D33200BBEF53 /* RecipeItemMapping.swift in Sources */,
 				041FBAFE2714747D0083DB99 /* SampleRecipeList.swift in Sources */,
 				0440295B270DFFD7007D3C5D /* RecipeCell.swift in Sources */,
 			);

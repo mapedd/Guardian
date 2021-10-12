@@ -22,11 +22,13 @@ struct RecipeList: View {
             ForEach(self.model.recipes) { item in
                 ZStack { // wrapping in ZStack to hide chevron
                     RecipeCell(item: item)
-                    NavigationLink(destination: {
-                        RecipeDetail(item: item.asDetailItem)
-                    }, label: {
+                    if let detail = item.asDetailItem {
+                        NavigationLink(destination: {
+                            RecipeDetail(item: detail)
+                        }, label: {
+                        }).opacity(0)
+                    }
 
-                    }).opacity(0)
                 }
             }
         }

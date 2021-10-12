@@ -13,8 +13,10 @@ struct ContentView: View {
     
     let viewModel: RecipeList.ViewModel
     
-    init(apiProvider: APIProvider) {
-        viewModel = RecipeList.ViewModel(apiProvider: apiProvider)
+    init(apiProvider: APIProvider,
+         showingDetailsScreen: Bool = false) {
+        viewModel = RecipeList.ViewModel(apiProvider: apiProvider,
+                                         showDetailsScreen: showingDetailsScreen)
         viewModel.fetch(refresh: false)
     }
     

@@ -50,8 +50,7 @@ public struct RecipeResponse: Decodable, Hashable {
         public let id: String
         public let fields: [String: String]
         public var tags: [[String: TagValue]]
-
-
+        public var webTitle: String?
 
         public var headline: String? {
             return fields[FieldKey.headline.rawValue]

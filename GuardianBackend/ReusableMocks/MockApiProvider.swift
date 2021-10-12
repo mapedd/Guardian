@@ -40,6 +40,9 @@ public class MockAPIProvider: APIProvider {
 
     let bundle = Bundle(for: Foo.self)
 
+    // usefull for simulating slow network, especialy since Bug Sur doesn't habe Network Link Conditioner
+    let delayInterval: TimeInterval = 0
+
     public var resultToReturn: Result<Data, URLError>?
     public var urlsInserted = [URL]()
     
@@ -53,7 +56,7 @@ public class MockAPIProvider: APIProvider {
                 return Just((data: data, response: urlResponse(for: url)))
                     .setFailureType(to: URLError.self)
                     .eraseToAnyPublisher()
-            case .failure(let error):
+            case .failure(_):
                 let error = URLError(URLError.Code.badServerResponse, userInfo: [:] )
                 let result = Result<APIResponse, URLError>.failure(error)
                 return result.publisher.eraseToAnyPublisher()
@@ -67,6 +70,7 @@ public class MockAPIProvider: APIProvider {
             } else {
                 let response = defaultResponse(url: url)
                 return Just((data: response.data, response: response.response))
+                    .delay(for: .seconds(delayInterval), scheduler: RunLoop.main, options: .none)
                     .setFailureType(to: URLError.self)
                     .eraseToAnyPublisher()
             }

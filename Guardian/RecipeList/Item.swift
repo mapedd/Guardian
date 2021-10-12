@@ -28,10 +28,7 @@ extension RecipeList {
         let imageURL: URL?
         let id: String
         let bodyHTML: String
-        let author: Author
-
-//        let buildDestination: (Item) -> Destination
-
+        let author: Author?
 
         var image: Image? {
             if let imageName = imageName {
@@ -41,12 +38,16 @@ extension RecipeList {
             }
         }
 
-        var asDetailItem: RecipeDetail.Item {
-            RecipeDetail.Item(author: author,
-                              title: topTitle,
-                              body: bodyHTML,
-                              image: nil,
-                              imageURL: imageURL)
+        var asDetailItem: RecipeDetail.Item? {
+            // if no author data we do not show details screen
+            guard let author = author else {
+                return nil
+            }
+            return RecipeDetail.Item(author: author,
+                                     title: topTitle,
+                                     body: bodyHTML,
+                                     image: nil,
+                                     imageURL: imageURL)
         }
     }
 }

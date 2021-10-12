@@ -8,39 +8,13 @@
 import Foundation
 import Combine
 
-
-//- tag - tone/recipes
-//- show-tags - series
-//- show-fields - thumbnail, headline
-
-enum Filters {
-    case showFields(fields : [AdditionalInfoField])
-    case tagsToShow(tags: [TagToShow])
-    case tagsToFilterBy(tags: [TagToFilter])
-}
-
-enum AdditionalInfoField: String {
-    case thumbnail
-    case headline
-}
-
-enum TagToFilter {
-    case tone
-    case recipes
-}
-
-enum TagToShow : String {
-    case series
-}
-
-
 public class GuardianAPI {
 
     public enum Error: LocalizedError, Equatable {
         case unreachable(URL)
         case invalidResponse
         case wrongJSONStructure
-
+        
         public var errorDescription: String? {
             switch self {
             case .invalidResponse: return "Cannot decode data."
@@ -50,42 +24,31 @@ public class GuardianAPI {
         }
     }
 
-    public enum EndPoint {
-        static let baseURL = URL(string: "https://content.guardianapis.com/search?tag=tone%2Frecipes&from-date=2010-01-01&show-tags=contributor&show-fields=all&api-key=b3437fe8-33dd-4b67-a90b-e2bdb634fcb3")!
-
-        case recipes
-
-        public var url: URL {
-            switch self {
-            case .recipes:
-                return EndPoint.baseURL
-            }
-        }
-    }
-
     private let apiQueue = DispatchQueue(label: "API.guardian",
                                          qos: .default,
                                          attributes: .concurrent)
-
+    
     private let decoder = JSONDecoder()
-
+    
     private let apiProvider: APIProvider
-
-    public init(apiProvider: APIProvider) {
+    private let endpoint: EndPoint
+    
+    public init(apiProvider: APIProvider,
+                endpoint: EndPoint) {
         self.apiProvider = apiProvider
+        self.endpoint = endpoint
     }
-
-
+    
     public func recipes() -> AnyPublisher<GuardianResponse, Error> {
-        apiProvider
-            .apiResponse(for: Self.EndPoint.recipes.url)
+        return apiProvider
+            .apiResponse(for: endpoint.url)
             .receive(on: apiQueue)
             .map(\.data)
             .decode(type: GuardianResponse.self, decoder: decoder)
             .mapError { error in
                 switch error {
                 case is URLError:
-                    return Error.unreachable(EndPoint.recipes.url)
+                    return Error.unreachable(self.endpoint.url)
                 case is DecodingError:
                     return Error.wrongJSONStructure
                 default: return Error.invalidResponse
@@ -93,5 +56,6 @@ public class GuardianAPI {
             }
             .eraseToAnyPublisher()
     }
-
+    
 }
+
