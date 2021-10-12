@@ -89,7 +89,7 @@
          <EnvironmentVariable
             key = "showDetailScreen"
             value = "1"
-            isEnabled = "NO">
+            isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
    </LaunchAction>

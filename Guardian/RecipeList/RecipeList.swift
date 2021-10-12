@@ -20,16 +20,7 @@ struct RecipeList: View {
     var body: some View {
         List {
             ForEach(self.model.recipes) { item in
-                ZStack { // wrapping in ZStack to hide chevron
-                    RecipeCell(item: item)
-                    if let detail = item.asDetailItem {
-                        NavigationLink(destination: {
-                            RecipeDetail(item: detail)
-                        }, label: {
-                        }).opacity(0)
-                    }
-
-                }
+                RecipeListElement(item: item)
             }
         }
         .refreshable {
