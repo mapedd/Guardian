@@ -10,20 +10,14 @@ import GuardianBackend
 
 @main
 struct GuardianApp: App {
-    var testing: Bool {
-        return ProcessInfo.processInfo.environment["mockNetwork"] != nil
-    }
-    
-    var provider : APIProvider {
-        if testing {
-            return MockAPIProvider()
-        } else {
-            return URLSession.shared
-        }
-    }
+
     var body: some Scene {
         WindowGroup {
-            ContentView(apiProvider: provider)
+            if isTesting { // do not load anything in the unit tests
+                EmptyView()
+            } else {
+                ContentView(apiProvider: self.provider)
+            }
         }
     }
 }

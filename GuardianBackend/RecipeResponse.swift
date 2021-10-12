@@ -15,23 +15,63 @@ public struct GuardianResponse: Decodable, Hashable  {
 }
 
 public struct RecipeResponse: Decodable, Hashable {
-    public struct Recipe: Decodable, Hashable {
-        public let id: String
 
+    public let results: [Recipe]
+
+    public init(results: [Recipe]) {
+        self.results = results
+    }
+
+    public struct Recipe: Decodable, Hashable {
+
+        public enum FieldKey : String {
+            case headline
+            case bodyText
+            case body
+            case thumbnail
+        }
+
+        public enum TagKey: String {
+            case bylineImageUrl
+            case firstName
+            case lastName
+        }
+
+        public init(id: String,
+                    fields: [String: String],
+                    tags: [[String: TagValue]]) {
+            self.id = id
+            self.fields = fields
+            self.tags = tags
+        }
+
+        
+
+        public let id: String
         public let fields: [String: String]
+        public var tags: [[String: TagValue]]
+
+
 
         public var headline: String? {
-            return fields["headline"]
+            return fields[FieldKey.headline.rawValue]
         }
 
         public var bodyText: String? {
-            return fields["bodyText"]
+            return fields[FieldKey.bodyText.rawValue]
         }
         public var body: String? {
-            return fields["body"]
+            return fields[FieldKey.body.rawValue]
         }
 
-        public var tags: [[String: TagValue]]
+        public var thumbnail: URL? {
+            guard let thumbnailString = fields[FieldKey.thumbnail.rawValue],
+                  let thumbnailURL = URL(string: thumbnailString) else {
+                      return nil
+                  }
+
+            return thumbnailURL
+        }
 
         public enum TagValue: Decodable, Hashable {
             
@@ -54,8 +94,8 @@ public struct RecipeResponse: Decodable, Hashable {
         }
 
         public var authPicURL: URL? {
-            guard case let .string(bylineURL) = firstTags["bylineImageUrl"],
-                    let url = URL(string: bylineURL)
+            guard case let .string(bylineURL) = firstTags[TagKey.bylineImageUrl.rawValue],
+                  let url = URL(string: bylineURL)
             else {
                 return nil
             }
@@ -64,34 +104,17 @@ public struct RecipeResponse: Decodable, Hashable {
         }
 
         public var authorFirstName: String? {
-            guard case let .string(value) = firstTags["firstName"] else {
+            guard case let .string(value) = firstTags[TagKey.firstName.rawValue] else {
                 return nil
             }
             return value
         }
 
         public var authorLastName: String? {
-            guard case let .string(value) = firstTags["lastName"] else {
+            guard case let .string(value) = firstTags[TagKey.lastName.rawValue] else {
                 return nil
             }
             return value
         }
-
-        public var thumbnail: URL? {
-            guard let thumbnailString = fields["thumbnail"],
-                  let thumbnailURL = URL(string: thumbnailString) else {
-                      return nil
-                  }
-
-            return thumbnailURL
-        }
-
-
-    }
-
-    public let results: [Recipe]
-    
-    public init(results: [Recipe]) {
-        self.results = results
     }
 }

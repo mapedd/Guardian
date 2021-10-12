@@ -22,8 +22,6 @@ struct Name: Hashable {
 
 extension RecipeList {
     struct Item: Hashable, Identifiable {
-
-
         let topTitle: String
         let bottomCopy: String
         let imageName: String?

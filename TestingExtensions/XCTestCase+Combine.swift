@@ -6,13 +6,13 @@
 //
 
 import Foundation
-import Combine
 import XCTest
+import Combine
 
 extension XCTestCase {
 
-    func waitFailure<T: Publisher>(for publisher: T,
-        timeout: TimeInterval = 10,
+    public func waitFailure<T: Publisher>(for publisher: T,
+        timeout: TimeInterval = 10000,
         file: StaticString = #file,
         line: UInt = #line
     ) throws -> T.Failure {
@@ -57,8 +57,8 @@ extension XCTestCase {
         }
     }
 
-    func wait<T: Publisher>(for publisher: T,
-        timeout: TimeInterval = 10,
+    public func wait<T: Publisher>(for publisher: T,
+        timeout: TimeInterval = 100000,
         file: StaticString = #file,
         line: UInt = #line
     ) throws -> T.Output {

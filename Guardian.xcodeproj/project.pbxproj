@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0419426E2714DD0100C65B09 /* TestingExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047CD11D2714D7980068AA8C /* TestingExtensions.framework */; };
 		041FBAB2271471580083DB99 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041FBAB1271471580083DB99 /* Item.swift */; };
 		041FBAB4271471C10083DB99 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041FBAB3271471C10083DB99 /* ViewModel.swift */; };
 		041FBAE5271474360083DB99 /* GuardianBackend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041FBADD271474360083DB99 /* GuardianBackend.framework */; };
@@ -18,13 +19,9 @@
 		041FBAFB271474440083DB99 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04402974271074AC007D3C5D /* APIProvider.swift */; };
 		041FBAFC271474510083DB99 /* MockApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440296C270F8302007D3C5D /* MockApiProvider.swift */; };
 		041FBAFE2714747D0083DB99 /* SampleRecipeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440295C270E107E007D3C5D /* SampleRecipeList.swift */; };
-		041FBB00271477E70083DB99 /* GuardianBackend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041FBADD271474360083DB99 /* GuardianBackend.framework */; };
 		041FBB01271478C70083DB99 /* sampleEmpty.json in Resources */ = {isa = PBXBuildFile; fileRef = 0440296E2710500F007D3C5D /* sampleEmpty.json */; };
 		041FBB0327147E030083DB99 /* sampleFull.json in Resources */ = {isa = PBXBuildFile; fileRef = 041FBB0227147E030083DB99 /* sampleFull.json */; };
-		041FBB0527147F230083DB99 /* XCTestCase+Matchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044029722710702E007D3C5D /* XCTestCase+Matchers.swift */; };
-		041FBB0627147F230083DB99 /* XCTestCase+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044029702710525E007D3C5D /* XCTestCase+Combine.swift */; };
 		041FBB0827147F830083DB99 /* GuardianAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440293F270DFCA3007D3C5D /* GuardianAPITests.swift */; };
-		041FBB0A2714807A0083DB99 /* RecipeListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041FBB092714807A0083DB99 /* RecipeListTests.swift */; };
 		041FBB0C271481C60083DB99 /* ReceipeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041FBB0B271481C60083DB99 /* ReceipeList.swift */; };
 		041FBB0E271481D60083DB99 /* ReceipeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041FBB0D271481D60083DB99 /* ReceipeDetail.swift */; };
 		041FBB14271484D70083DB99 /* ScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041FBB13271484D70083DB99 /* ScreenModel.swift */; };
@@ -40,7 +37,16 @@
 		0440296B270F7D7B007D3C5D /* RecipeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440296A270F7D7B007D3C5D /* RecipeDetail.swift */; };
 		044029772710790C007D3C5D /* TextOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044029762710790C007D3C5D /* TextOverlay.swift */; };
 		047CD1032714B7460068AA8C /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CD1022714B7460068AA8C /* LoadingIndicator.swift */; };
+		047CD1292714D7B60068AA8C /* XCTestCase+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044029702710525E007D3C5D /* XCTestCase+Combine.swift */; };
+		047CD12A2714D7B60068AA8C /* XCTestCase+Matchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044029722710702E007D3C5D /* XCTestCase+Matchers.swift */; };
+		047CD12C2714D7E30068AA8C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047CD12B2714D7E30068AA8C /* XCTest.framework */; };
 		048D1BFE27149F89004A5122 /* AsyncImageWithPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D1BFD27149F89004A5122 /* AsyncImageWithPlaceholder.swift */; };
+		04D937DB27156C30002DEB55 /* ReceipeListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D937DA27156C30002DEB55 /* ReceipeListTests.swift */; };
+		04D937DE27157A7A002DEB55 /* TestingExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047CD11D2714D7980068AA8C /* TestingExtensions.framework */; };
+		04D937E027157E9C002DEB55 /* AppExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D937DF27157E9C002DEB55 /* AppExtensions.swift */; };
+		04D937E227158079002DEB55 /* sampleWrongFormat.json in Resources */ = {isa = PBXBuildFile; fileRef = 04D937E127158079002DEB55 /* sampleWrongFormat.json */; };
+		04D937E4271583DC002DEB55 /* RecipeResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D937E3271583DC002DEB55 /* RecipeResponseTests.swift */; };
+		04D937E627158942002DEB55 /* RecipeListConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D937E527158942002DEB55 /* RecipeListConversionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,19 +71,26 @@
 			remoteGlobalIDString = 041FBADC271474360083DB99;
 			remoteInfo = GuardianBackend;
 		};
-		0440293C270DFCA3007D3C5D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 04402923270DFCA1007D3C5D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0440292A270DFCA1007D3C5D;
-			remoteInfo = Guardian;
-		};
 		04402946270DFCA3007D3C5D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 04402923270DFCA1007D3C5D /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0440292A270DFCA1007D3C5D;
 			remoteInfo = Guardian;
+		};
+		04D937D527156C11002DEB55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04402923270DFCA1007D3C5D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0440292A270DFCA1007D3C5D;
+			remoteInfo = Guardian;
+		};
+		04D937DC27157A6F002DEB55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04402923270DFCA1007D3C5D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 047CD11C2714D7980068AA8C;
+			remoteInfo = TestingExtensions;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -102,7 +115,6 @@
 		041FBADF271474360083DB99 /* GuardianBackend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuardianBackend.h; sourceTree = "<group>"; };
 		041FBAE4271474360083DB99 /* GuardianBackendTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuardianBackendTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		041FBB0227147E030083DB99 /* sampleFull.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sampleFull.json; sourceTree = "<group>"; };
-		041FBB092714807A0083DB99 /* RecipeListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListTests.swift; sourceTree = "<group>"; };
 		041FBB0B271481C60083DB99 /* ReceipeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceipeList.swift; sourceTree = "<group>"; };
 		041FBB0D271481D60083DB99 /* ReceipeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceipeDetail.swift; sourceTree = "<group>"; };
 		041FBB13271484D70083DB99 /* ScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenModel.swift; sourceTree = "<group>"; };
@@ -112,7 +124,6 @@
 		04402930270DFCA1007D3C5D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		04402932270DFCA3007D3C5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04402935270DFCA3007D3C5D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		0440293B270DFCA3007D3C5D /* GuardianTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuardianTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0440293F270DFCA3007D3C5D /* GuardianAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardianAPITests.swift; sourceTree = "<group>"; };
 		04402945270DFCA3007D3C5D /* GuardianUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuardianUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04402949270DFCA3007D3C5D /* GuardianUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardianUITests.swift; sourceTree = "<group>"; };
@@ -130,7 +141,15 @@
 		04402974271074AC007D3C5D /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		044029762710790C007D3C5D /* TextOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextOverlay.swift; sourceTree = "<group>"; };
 		047CD1022714B7460068AA8C /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
+		047CD11D2714D7980068AA8C /* TestingExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TestingExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		047CD12B2714D7E30068AA8C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		048D1BFD27149F89004A5122 /* AsyncImageWithPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageWithPlaceholder.swift; sourceTree = "<group>"; };
+		04D937D127156C11002DEB55 /* GuardianTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuardianTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D937DA27156C30002DEB55 /* ReceipeListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceipeListTests.swift; sourceTree = "<group>"; };
+		04D937DF27157E9C002DEB55 /* AppExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppExtensions.swift; sourceTree = "<group>"; };
+		04D937E127158079002DEB55 /* sampleWrongFormat.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sampleWrongFormat.json; sourceTree = "<group>"; };
+		04D937E3271583DC002DEB55 /* RecipeResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeResponseTests.swift; sourceTree = "<group>"; };
+		04D937E527158942002DEB55 /* RecipeListConversionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListConversionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +164,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0419426E2714DD0100C65B09 /* TestingExtensions.framework in Frameworks */,
 				041FBAE5271474360083DB99 /* GuardianBackend.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,18 +177,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		04402938270DFCA3007D3C5D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				041FBB00271477E70083DB99 /* GuardianBackend.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		04402942270DFCA3007D3C5D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		047CD11A2714D7980068AA8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				047CD12C2714D7E30068AA8C /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D937CE27156C11002DEB55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04D937DE27157A7A002DEB55 /* TestingExtensions.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				0440296E2710500F007D3C5D /* sampleEmpty.json */,
+				04D937E127158079002DEB55 /* sampleWrongFormat.json */,
 				041FBB0227147E030083DB99 /* sampleFull.json */,
 				0440296C270F8302007D3C5D /* MockApiProvider.swift */,
 				0440295E270E19FB007D3C5D /* GuardianAPI.swift */,
@@ -203,9 +232,8 @@
 		041FBAEA271474360083DB99 /* GuardianBackendTests */ = {
 			isa = PBXGroup;
 			children = (
-				044029702710525E007D3C5D /* XCTestCase+Combine.swift */,
-				044029722710702E007D3C5D /* XCTestCase+Matchers.swift */,
 				0440293F270DFCA3007D3C5D /* GuardianAPITests.swift */,
+				04D937E3271583DC002DEB55 /* RecipeResponseTests.swift */,
 			);
 			path = GuardianBackendTests;
 			sourceTree = "<group>";
@@ -213,6 +241,7 @@
 		041FBAFF271477E70083DB99 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				047CD12B2714D7E30068AA8C /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -239,10 +268,11 @@
 			isa = PBXGroup;
 			children = (
 				0440292D270DFCA1007D3C5D /* Guardian */,
-				0440293E270DFCA3007D3C5D /* GuardianTests */,
+				04D937D227156C11002DEB55 /* GuardianTests */,
 				04402948270DFCA3007D3C5D /* GuardianUITests */,
 				041FBADE271474360083DB99 /* GuardianBackend */,
 				041FBAEA271474360083DB99 /* GuardianBackendTests */,
+				047CD11E2714D7980068AA8C /* TestingExtensions */,
 				0440292C270DFCA1007D3C5D /* Products */,
 				041FBAFF271477E70083DB99 /* Frameworks */,
 			);
@@ -252,10 +282,11 @@
 			isa = PBXGroup;
 			children = (
 				0440292B270DFCA1007D3C5D /* Guardian.app */,
-				0440293B270DFCA3007D3C5D /* GuardianTests.xctest */,
 				04402945270DFCA3007D3C5D /* GuardianUITests.xctest */,
 				041FBADD271474360083DB99 /* GuardianBackend.framework */,
 				041FBAE4271474360083DB99 /* GuardianBackendTests.xctest */,
+				047CD11D2714D7980068AA8C /* TestingExtensions.framework */,
+				04D937D127156C11002DEB55 /* GuardianTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -264,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				0440292E270DFCA1007D3C5D /* GuardianApp.swift */,
+				04D937DF27157E9C002DEB55 /* AppExtensions.swift */,
 				04402930270DFCA1007D3C5D /* ContentView.swift */,
 				041FBAB02714713A0083DB99 /* RecipeList */,
 				048D1BFB27149D94004A5122 /* RecipeDetail */,
@@ -283,14 +315,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		0440293E270DFCA3007D3C5D /* GuardianTests */ = {
-			isa = PBXGroup;
-			children = (
-				041FBB092714807A0083DB99 /* RecipeListTests.swift */,
-			);
-			path = GuardianTests;
-			sourceTree = "<group>";
-		};
 		04402948270DFCA3007D3C5D /* GuardianUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +323,15 @@
 				041FBB0F271481E50083DB99 /* Screens */,
 			);
 			path = GuardianUITests;
+			sourceTree = "<group>";
+		};
+		047CD11E2714D7980068AA8C /* TestingExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				044029702710525E007D3C5D /* XCTestCase+Combine.swift */,
+				044029722710702E007D3C5D /* XCTestCase+Matchers.swift */,
+			);
+			path = TestingExtensions;
 			sourceTree = "<group>";
 		};
 		048D1BFB27149D94004A5122 /* RecipeDetail */ = {
@@ -320,6 +353,15 @@
 			path = ReusableViews;
 			sourceTree = "<group>";
 		};
+		04D937D227156C11002DEB55 /* GuardianTests */ = {
+			isa = PBXGroup;
+			children = (
+				04D937DA27156C30002DEB55 /* ReceipeListTests.swift */,
+				04D937E527158942002DEB55 /* RecipeListConversionTests.swift */,
+			);
+			path = GuardianTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -328,6 +370,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				041FBAED271474360083DB99 /* GuardianBackend.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		047CD1182714D7980068AA8C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,24 +439,6 @@
 			productReference = 0440292B270DFCA1007D3C5D /* Guardian.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0440293A270DFCA3007D3C5D /* GuardianTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 04402952270DFCA3007D3C5D /* Build configuration list for PBXNativeTarget "GuardianTests" */;
-			buildPhases = (
-				04402937270DFCA3007D3C5D /* Sources */,
-				04402938270DFCA3007D3C5D /* Frameworks */,
-				04402939270DFCA3007D3C5D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0440293D270DFCA3007D3C5D /* PBXTargetDependency */,
-			);
-			name = GuardianTests;
-			productName = GuardianTests;
-			productReference = 0440293B270DFCA3007D3C5D /* GuardianTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		04402944270DFCA3007D3C5D /* GuardianUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04402955270DFCA3007D3C5D /* Build configuration list for PBXNativeTarget "GuardianUITests" */;
@@ -425,6 +456,43 @@
 			productName = GuardianUITests;
 			productReference = 04402945270DFCA3007D3C5D /* GuardianUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		047CD11C2714D7980068AA8C /* TestingExtensions */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 047CD1252714D7980068AA8C /* Build configuration list for PBXNativeTarget "TestingExtensions" */;
+			buildPhases = (
+				047CD1182714D7980068AA8C /* Headers */,
+				047CD1192714D7980068AA8C /* Sources */,
+				047CD11A2714D7980068AA8C /* Frameworks */,
+				047CD11B2714D7980068AA8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestingExtensions;
+			productName = TestingExtensions;
+			productReference = 047CD11D2714D7980068AA8C /* TestingExtensions.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		04D937D027156C11002DEB55 /* GuardianTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04D937D727156C11002DEB55 /* Build configuration list for PBXNativeTarget "GuardianTests" */;
+			buildPhases = (
+				04D937CD27156C11002DEB55 /* Sources */,
+				04D937CE27156C11002DEB55 /* Frameworks */,
+				04D937CF27156C11002DEB55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04D937DD27157A6F002DEB55 /* PBXTargetDependency */,
+				04D937D627156C11002DEB55 /* PBXTargetDependency */,
+			);
+			name = GuardianTests;
+			productName = GuardianTests;
+			productReference = 04D937D127156C11002DEB55 /* GuardianTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -446,13 +514,16 @@
 					0440292A270DFCA1007D3C5D = {
 						CreatedOnToolsVersion = 13.0;
 					};
-					0440293A270DFCA3007D3C5D = {
-						CreatedOnToolsVersion = 13.0;
-						LastSwiftMigration = 1300;
-						TestTargetID = 0440292A270DFCA1007D3C5D;
-					};
 					04402944270DFCA3007D3C5D = {
 						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 0440292A270DFCA1007D3C5D;
+					};
+					047CD11C2714D7980068AA8C = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					04D937D027156C11002DEB55 = {
+						CreatedOnToolsVersion = 13.0;
+						LastSwiftMigration = 1300;
 						TestTargetID = 0440292A270DFCA1007D3C5D;
 					};
 				};
@@ -471,10 +542,11 @@
 			projectRoot = "";
 			targets = (
 				0440292A270DFCA1007D3C5D /* Guardian */,
-				0440293A270DFCA3007D3C5D /* GuardianTests */,
+				04D937D027156C11002DEB55 /* GuardianTests */,
 				04402944270DFCA3007D3C5D /* GuardianUITests */,
 				041FBADC271474360083DB99 /* GuardianBackend */,
 				041FBAE3271474360083DB99 /* GuardianBackendTests */,
+				047CD11C2714D7980068AA8C /* TestingExtensions */,
 			);
 		};
 /* End PBXProject section */
@@ -484,6 +556,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D937E227158079002DEB55 /* sampleWrongFormat.json in Resources */,
 				041FBB0327147E030083DB99 /* sampleFull.json in Resources */,
 				041FBB01271478C70083DB99 /* sampleEmpty.json in Resources */,
 			);
@@ -505,14 +578,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		04402939270DFCA3007D3C5D /* Resources */ = {
+		04402943270DFCA3007D3C5D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		04402943270DFCA3007D3C5D /* Resources */ = {
+		047CD11B2714D7980068AA8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D937CF27156C11002DEB55 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -537,8 +617,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				041FBB0527147F230083DB99 /* XCTestCase+Matchers.swift in Sources */,
-				041FBB0627147F230083DB99 /* XCTestCase+Combine.swift in Sources */,
+				04D937E4271583DC002DEB55 /* RecipeResponseTests.swift in Sources */,
 				041FBB0827147F830083DB99 /* GuardianAPITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -557,16 +636,9 @@
 				0440292F270DFCA1007D3C5D /* GuardianApp.swift in Sources */,
 				041FBAB4271471C10083DB99 /* ViewModel.swift in Sources */,
 				042A013727149C3F00124999 /* DetailItem.swift in Sources */,
+				04D937E027157E9C002DEB55 /* AppExtensions.swift in Sources */,
 				041FBAFE2714747D0083DB99 /* SampleRecipeList.swift in Sources */,
 				0440295B270DFFD7007D3C5D /* RecipeCell.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		04402937270DFCA3007D3C5D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				041FBB0A2714807A0083DB99 /* RecipeListTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,6 +651,24 @@
 				041FBB0E271481D60083DB99 /* ReceipeDetail.swift in Sources */,
 				04402969270F7CB9007D3C5D /* UITestCase.swift in Sources */,
 				041FBB0C271481C60083DB99 /* ReceipeList.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		047CD1192714D7980068AA8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				047CD1292714D7B60068AA8C /* XCTestCase+Combine.swift in Sources */,
+				047CD12A2714D7B60068AA8C /* XCTestCase+Matchers.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D937CD27156C11002DEB55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04D937DB27156C30002DEB55 /* ReceipeListTests.swift in Sources */,
+				04D937E627158942002DEB55 /* RecipeListConversionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,15 +690,20 @@
 			target = 041FBADC271474360083DB99 /* GuardianBackend */;
 			targetProxy = 041FBAEE271474360083DB99 /* PBXContainerItemProxy */;
 		};
-		0440293D270DFCA3007D3C5D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0440292A270DFCA1007D3C5D /* Guardian */;
-			targetProxy = 0440293C270DFCA3007D3C5D /* PBXContainerItemProxy */;
-		};
 		04402947270DFCA3007D3C5D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0440292A270DFCA1007D3C5D /* Guardian */;
 			targetProxy = 04402946270DFCA3007D3C5D /* PBXContainerItemProxy */;
+		};
+		04D937D627156C11002DEB55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0440292A270DFCA1007D3C5D /* Guardian */;
+			targetProxy = 04D937D527156C11002DEB55 /* PBXContainerItemProxy */;
+		};
+		04D937DD27157A6F002DEB55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 047CD11C2714D7980068AA8C /* TestingExtensions */;
+			targetProxy = 04D937DC27157A6F002DEB55 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -897,59 +992,6 @@
 			};
 			name = Release;
 		};
-		04402953270DFCA3007D3C5D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F8544XK3Q3;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mapedd.guardian.GuardianTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Guardian.app/Guardian";
-			};
-			name = Debug;
-		};
-		04402954270DFCA3007D3C5D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F8544XK3Q3;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mapedd.guardian.GuardianTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Guardian.app/Guardian";
-			};
-			name = Release;
-		};
 		04402956270DFCA3007D3C5D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -996,6 +1038,115 @@
 			};
 			name = Release;
 		};
+		047CD1262714D7980068AA8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = F8544XK3Q3;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mapedd.guardian.TestingExtensions;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		047CD1272714D7980068AA8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = F8544XK3Q3;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mapedd.guardian.TestingExtensions;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		04D937D827156C11002DEB55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F8544XK3Q3;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mapedd.guardian.GuardianTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Guardian.app/Guardian";
+			};
+			name = Debug;
+		};
+		04D937D927156C11002DEB55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F8544XK3Q3;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mapedd.guardian.GuardianTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Guardian.app/Guardian";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1035,20 +1186,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		04402952270DFCA3007D3C5D /* Build configuration list for PBXNativeTarget "GuardianTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				04402953270DFCA3007D3C5D /* Debug */,
-				04402954270DFCA3007D3C5D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		04402955270DFCA3007D3C5D /* Build configuration list for PBXNativeTarget "GuardianUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04402956270DFCA3007D3C5D /* Debug */,
 				04402957270DFCA3007D3C5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		047CD1252714D7980068AA8C /* Build configuration list for PBXNativeTarget "TestingExtensions" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				047CD1262714D7980068AA8C /* Debug */,
+				047CD1272714D7980068AA8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04D937D727156C11002DEB55 /* Build configuration list for PBXNativeTarget "GuardianTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04D937D827156C11002DEB55 /* Debug */,
+				04D937D927156C11002DEB55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -9,10 +9,10 @@ import Foundation
 import XCTest
 
 extension XCTestCase {
-    func XCTAssertCount<T:Collection>(_ collection: T, _ number: Int) {
+    public func XCTAssertCount<T:Collection>(_ collection: T, _ number: Int) {
         XCTAssertEqual(collection.count, number)
     }
-    func XCTAssertContains(_ testedString: String, _ expectedSubstring: String) {
+    public func XCTAssertContains(_ testedString: String, _ expectedSubstring: String) {
         XCTAssertTrue(testedString.contains(expectedSubstring))
     }
 }

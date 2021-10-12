@@ -26,7 +26,7 @@ extension RecipeList {
             })
         }
 
-        init(apiProvider: APIProvider) {
+        public init(apiProvider: APIProvider) {
             self.api = GuardianAPI(apiProvider: apiProvider)
         }
 
@@ -34,7 +34,7 @@ extension RecipeList {
 
         var subscriptions = [AnyCancellable]()
 
-        func fetch(refresh: Bool) {
+        public func fetch(refresh: Bool) {
             if refresh {
                 loading = true
             }

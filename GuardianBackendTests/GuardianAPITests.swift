@@ -8,6 +8,7 @@
 import XCTest
 import Combine
 import GuardianBackend
+import TestingExtensions
 
 class GuardianAPITests: XCTestCase {
 
@@ -31,6 +32,10 @@ class GuardianAPITests: XCTestCase {
         let errorReceived = try waitFailure(for: api.recipes())
         let expectedError = GuardianAPI.Error.unreachable(GuardianAPI.EndPoint.recipes.url)
         XCTAssertEqual(errorReceived, expectedError)
+    }
+
+    func testReturningUndecodableJSONError() throws {
+        
     }
 
     func testAPICallsCorrectURL() throws {

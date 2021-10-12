@@ -1,0 +1,18 @@
+{
+  "respsdonse": {
+    "resultsasd": [
+      {
+        "id": "id0",
+        "type": "article",
+        "sectionId": "food",
+        "sectionName": "Food",
+      },
+      {
+        "id": "id1",
+        "type": "article",
+        "sectionId": "food",
+        "sectionName": "Food",
+      }
+    ]
+  }
+}
