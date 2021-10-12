@@ -11,13 +11,10 @@ import GuardianBackend
 import TestingExtensions
 
 class RecipeListViewModelTests: XCTestCase {
+    
     func testFetchingNoRefresh() throws {
         let vm = RecipeList.ViewModel(apiProvider: MockAPIProvider())
-        let recipesPublisher = vm.$recipes
-            .dropFirst() // first one is default value
-            .collect(1)
-            .first()
-
+        let recipesPublisher = vm.$recipes.collectNext(1)
         vm.fetch(refresh: false)
         let recipes: [[RecipeList.Item]] = try wait(for: recipesPublisher)
         let inner = try XCTUnwrap(recipes.first)
@@ -26,15 +23,34 @@ class RecipeListViewModelTests: XCTestCase {
 
     func testFetchingReceivesError() throws {
         let vm = RecipeList.ViewModel(apiProvider: MockAPIProvider(returnError: true))
-        let errorPublisher = vm.$error
-            .dropFirst()
-            .collect(1)
-            .first()
+        let errorPublisher = vm.$error.collectNext(1)
 
         vm.fetch(refresh: false)
 
         let error: [GuardianAPI.Error?] = try waitFor(firstOutput: errorPublisher)
         let expectedErrors = [GuardianAPI.Error.unreachable(GuardianAPI.EndPoint.recipes.url)]
         XCTAssertEqual(error, expectedErrors)
+    }
+
+    func testFetchingTogglesLoading() throws {
+        let vm = RecipeList.ViewModel(apiProvider: MockAPIProvider())
+        let loadingPublisher = vm.$loading.collect(2)
+
+        vm.fetch(refresh: false)
+
+        let output = try waitFor(firstOutput: loadingPublisher)
+
+        XCTAssertEqual(output, [true, false])
+    }
+
+    func testFetchingNotTogglesLoading() throws {
+        let vm = RecipeList.ViewModel(apiProvider: MockAPIProvider())
+        let loadingPublisher = vm.$loading.collect(1)
+
+        vm.fetch(refresh: true)
+
+        let output = try waitFor(firstOutput: loadingPublisher)
+
+        XCTAssertEqual(output, [false])
     }
 }

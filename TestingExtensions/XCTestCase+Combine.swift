@@ -92,7 +92,7 @@ extension XCTestCase {
     }
 
     public func wait<T: Publisher>(for publisher: T,
-        timeout: TimeInterval = 1,
+        timeout: TimeInterval = 10000,
         file: StaticString = #file,
         line: UInt = #line
     ) throws -> T.Output {

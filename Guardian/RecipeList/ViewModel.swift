@@ -35,7 +35,7 @@ extension RecipeList {
         var subscriptions = [AnyCancellable]()
 
         public func fetch(refresh: Bool) {
-            if refresh {
+            if !refresh {
                 loading = true
             }
 

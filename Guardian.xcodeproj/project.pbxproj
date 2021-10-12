@@ -47,6 +47,7 @@
 		04D937E227158079002DEB55 /* sampleWrongFormat.json in Resources */ = {isa = PBXBuildFile; fileRef = 04D937E127158079002DEB55 /* sampleWrongFormat.json */; };
 		04D937E4271583DC002DEB55 /* RecipeResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D937E3271583DC002DEB55 /* RecipeResponseTests.swift */; };
 		04D937E627158942002DEB55 /* RecipeListConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D937E527158942002DEB55 /* RecipeListConversionTests.swift */; };
+		04D937E82715A195002DEB55 /* Publisher+Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D937E72715A195002DEB55 /* Publisher+Testing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +151,7 @@
 		04D937E127158079002DEB55 /* sampleWrongFormat.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sampleWrongFormat.json; sourceTree = "<group>"; };
 		04D937E3271583DC002DEB55 /* RecipeResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeResponseTests.swift; sourceTree = "<group>"; };
 		04D937E527158942002DEB55 /* RecipeListConversionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListConversionTests.swift; sourceTree = "<group>"; };
+		04D937E72715A195002DEB55 /* Publisher+Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Testing.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +332,7 @@
 			children = (
 				044029702710525E007D3C5D /* XCTestCase+Combine.swift */,
 				044029722710702E007D3C5D /* XCTestCase+Matchers.swift */,
+				04D937E72715A195002DEB55 /* Publisher+Testing.swift */,
 			);
 			path = TestingExtensions;
 			sourceTree = "<group>";
@@ -658,6 +661,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D937E82715A195002DEB55 /* Publisher+Testing.swift in Sources */,
 				047CD1292714D7B60068AA8C /* XCTestCase+Combine.swift in Sources */,
 				047CD12A2714D7B60068AA8C /* XCTestCase+Matchers.swift in Sources */,
 			);
