@@ -9,7 +9,7 @@ import XCTest
 
 class GuardianUITests: UITestCase {
 
-    func testExample() throws {
+    func testContentNavigationToDetailAndBack() throws {
         let _ = RecipeList(self.context)
             .waitForDataToLoad()
             .verifyNav(title: "Recipes")

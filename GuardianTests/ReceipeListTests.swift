@@ -24,15 +24,17 @@ class RecipeListViewModelTests: XCTestCase {
         XCTAssertCount(inner, 2)
     }
 
-//    func testFetchingReceivesError() throws {
-//        let vm = RecipeList.ViewModel(apiProvider: MockAPIProvider(returnError: true))
-//        let recipesPublisher = vm.$recipes
-//            .dropFirst()
-//
-//        vm.fetch(refresh: false)
-//
-//        let error = try waitFailure(for: recipesPublisher)
-//
-//        XCTAssertNotNil(error)
-//    }
+    func testFetchingReceivesError() throws {
+        let vm = RecipeList.ViewModel(apiProvider: MockAPIProvider(returnError: true))
+        let errorPublisher = vm.$error
+            .dropFirst()
+            .collect(1)
+            .first()
+
+        vm.fetch(refresh: false)
+
+        let error: [GuardianAPI.Error?] = try waitFor(firstOutput: errorPublisher)
+        let expectedErrors = [GuardianAPI.Error.unreachable(GuardianAPI.EndPoint.recipes.url)]
+        XCTAssertEqual(error, expectedErrors)
+    }
 }
