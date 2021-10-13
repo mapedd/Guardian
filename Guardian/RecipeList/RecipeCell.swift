@@ -34,6 +34,7 @@ struct RecipeCell: View {
                                       staticImage: item.image)
                 .cornerRadius(10)
                 .aspectRatio(3.0/2.0, contentMode: .fit)
+                .accessibility(label: Text("item.image"))
 
             Spacer()
                 .frame(height: 8)

@@ -30,4 +30,5 @@ extension ScreenModel {
         testCase.waitFor(app.navigationBars[title].staticTexts[title])
         return self
     }
+    
 }

@@ -38,6 +38,7 @@ struct RecipeDetail: View {
                         .overlay(Circle().stroke(Color.white, lineWidth: 4))
                         .shadow(radius: 7)
                         .offset(y: -75)
+                        .accessibilityLabel("author image")
 
                 }
                 Divider()

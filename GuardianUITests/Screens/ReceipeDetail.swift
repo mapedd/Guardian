@@ -8,24 +8,24 @@
 import Foundation
 
 class RecipeDetail : ScreenModel {
-    func verifyAuthor() -> Self {
+
+    func verifyContent() -> Self {
+        app.scrollViews.otherElements.staticTexts["item.title-Thomasina Miers’ recipe for roast chicken legs with sticky figs, red onions and oloroso vinegar"].tap()
         return self
     }
-    func verifyContent() -> Self {
-        return self
+    
+    func navigateBack() -> RecipeList {
+        app.navigationBars.firstMatch.buttons["Recipes"].tap()
+        return RecipeList(context)
     }
     func scrollDown() -> Self {
         let scrollViewsQuery = app.scrollViews
-        scrollViewsQuery.firstMatch.swipeDown()
+        scrollViewsQuery.firstMatch.swipeUp()
         return self
     }
     func scrollUp() -> Self {
         let scrollViewsQuery = app.scrollViews
         scrollViewsQuery.firstMatch.swipeDown()
         return self
-    }
-    func navigateBack() -> RecipeList {
-        app.navigationBars.firstMatch.buttons["Recipes"].tap()
-        return RecipeList(context)
     }
 }

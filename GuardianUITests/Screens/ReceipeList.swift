@@ -16,4 +16,12 @@ class RecipeList : ScreenModel {
         app.cells.element(boundBy: index).tap()
         return RecipeDetail(context)
     }
+    func scrollDown() -> Self {
+        app.tables.firstMatch.swipeUp()
+        return self
+    }
+    func scrollUp() -> Self {
+        app.tables.firstMatch.swipeDown()
+        return self
+    }
 }

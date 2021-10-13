@@ -24,10 +24,13 @@ class UITestCase: XCTestCase {
         launchApp()
     }
 
+    var additionalEnvVars = [String:String]()
+
     private func launchApp() {
         app = XCUIApplication()
 
-        let env = ["mockNetwork": "true"]
+        let env = ["mockNetwork": "true"].merging(additionalEnvVars) { (_, new) -> String in new}
+
         app.launchEnvironment = env
         app.launch()
     }
