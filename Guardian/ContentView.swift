@@ -24,6 +24,7 @@ struct ContentView: View {
         NavigationView {
             RecipeList(model: viewModel)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         .accentColor( .white)
     }
 }

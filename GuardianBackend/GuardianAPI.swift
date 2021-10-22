@@ -25,8 +25,7 @@ public class GuardianAPI {
     }
 
     private let apiQueue = DispatchQueue(label: "API.guardian",
-                                         qos: .default,
-                                         attributes: .concurrent)
+                                         qos: .default)
     
     private let decoder = JSONDecoder()
     
